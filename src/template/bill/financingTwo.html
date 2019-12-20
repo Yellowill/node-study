@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>融资申请</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css" />
+    <link rel="stylesheet" href="../../base/css/base.css" />
+    <link rel="stylesheet" href="../../base/css/module.css" />
+    <link rel="stylesheet" href="../res/css/skin.css" />
+    <link rel="stylesheet" href="../res/css/data-page.css" />
+    <style>
+        .afford-org:after{
+            content: "";
+            clear: both;
+        }
+        .bss{
+            display: none;
+        }
+    </style>
+</head>
+<body class="g-navbar-fixed addBill">
+<div style="z-index:9999;" class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="ui-menu"></div>
+    <div class="g-page-main page-demo financingTwo">
+        <div class="g-nav">
+            <i class="iconfont">&#xe601;</i><span class="g-nav-title g-font18">融资申请</span>
+            <a class="goback g-right" href="financingList.html">&lt;&lt;返回融资列表</a>
+        </div>
+        <div class="g-container">
+            <div class="transfer-header">
+                <div class="progress-bar">
+                    <ul class="clearBoth">
+                        <a href="financingOne.html"><li>1.选择通宝</li></a>
+                        <li class="active">2.选择机构</li>
+                        <li>3.补充融资材料</li>
+                        <li>4.融资信息确认</li>
+                        <li>5.申请完成</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="g-form-group" style="background-color: white">
+                <div class="g-left" style="height: 28.8px; padding-left: 20px; background-color: white"></div>
+                <div class="g-left">
+                    <label class="col40 g-left" style="line-height: 28px; margin-right: 56px;font-weight:600;font-size: 12px;">预计放款日期：</label>
+                    <span class="g-input-icon-right g-left">
+                        <input type="text" class="date" readonly="readonly" id="js-calender-start" placeholder="">
+                        <i class="iconfont g-input-icon-date" style="top: 0;">&#xe67f;</i>
+                    </span>
+                </div>
+            </div>
+            <div style="width:100%; height:20px; background-color:white"></div>
+            <div class="select-wrap" >
+                <div class="select-tip">选择放款机构：</div>
+                <div class="ui-newReport-section-right">
+                    <ul class="afford-org">
+<!--                        <li class="is-ready down">-->
+<!--                            <img src="../res/images/base/newReport-selected.png" alt="" class="section-right-selected i-img">-->
+<!--                            <img src="../res/images/base/newReport-select.png" alt="" class="section-right-select i-img">-->
+<!--                            <div class="section-right-box-one">-->
+<!--                                <div class="section-right-box-sec with-logo">-->
+<!--                                    <img src="../res/images/base/bank_ico_OUYEEL_s.png" alt="" class="ui-newReport-section-bank-icon"> <span class="ui-newReport-section-bank-name">欧冶保理</span>-->
+<!--                                    <span class="ui-newReport-iconfont-box"><i class="iconfont">&#xe66e;</i></span>-->
+<!--                                </div>-->
+<!--                                <div class="section-right-box-sec with-price">-->
+<!--                                    <div class="with-price-btn">试算费用</div>-->
+<!--                                    <span class="font14">放款金额</span> <span class="font20 i-ita loanAmount">&#45;&#45;</span> <span class="font14">元</span>-->
+<!--                                    <div class="clear"></div>-->
+<!--                                </div>-->
+<!--                                <div class="section-right-box-sec with-sum">-->
+<!--                                    <span class="txt"><i class="iconfont">&#xe60c;</i>服务费：<span class="serviceCharge">&#45;&#45;</span></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="txt"><i class="iconfont">&#xe60c;</i>利息：<span class="moneyRate">&#45;&#45;</span></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <img src="../res/images/base/newReport-pop-arrow.png" alt="" class="newReport-pop-arrow">-->
+<!--                            <img src="../res/images/base/newReport-pop-arrow-down.png" alt="" class="newReport-pop-arrow-down">-->
+<!--                            <span class="ui-newReport-hover-pop">-->
+<!--                                        <i class="iconfont">&#xe6f4;</i> <span>提示信息：因各放款机构的计息规则有所不同，平台显示的放款金额、息费等仅为试算金额，实际金额以放款机构公布为准。若无法选择放款机构，请联系客服4008201688、95025进行咨询。</span>-->
+<!--                                    </span>-->
+<!--                        </li>-->
+<!--                        <div class="g-clear"></div>-->
+                    </ul>
+                    <div class="g-clear"></div>
+                    <div style="margin-bottom: 20px;display: none;" class="ui-other-bank-btn">
+                        其他放款机构 <i class="iconfont">&#xe72e;</i>
+                        <!-- opposite icon is `&#xe72d;` -->
+                    </div>
+                    <div class="g-left" style="height: 28.8px; padding-left: 20px; background-color: white"></div>
+                    <div class="g-clear"></div>
+                    <div class="spaned none"><i class="iconfont">&#xe78c;</i></div>
+<!--                    <div class="notice">-->
+<!--                        <i class="iconfont">&#xe6f4;</i><span class="notice-con"></span>-->
+<!--                    </div>-->
+                </div>
+                <div class="g-clear"></div>
+            </div>
+
+            <div class="transfer-content">
+                <div class="hr"></div>
+                <div class="list-info">
+                    通宝列表
+                    <div class="info-right">持有金额合计：<span class="total-num">0.00</span>&nbsp;元&nbsp&nbsp&nbsp&nbsp&nbsp<span class="service_des">服务费：<span class="service-fee">0.00</span>&nbsp;元</span></div>
+                </div>
+                <div class="con-wrap">
+                    <div id="scroll-bar" class="table-con">
+                        <div class="table">
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-bar">
+                    <a id="prev-step" href="financingOne.html">上一步</a>
+                    <a id="confirmSubmit" href="javascript:;">下一步</a>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <!--弹出框-->
+        <div class="g-master-container" style="position: fixed; width: 1583px; height: 1828px; z-index: 2147483647; opacity: 1;display: none;">
+            <div class="ui-dialog-box">
+                <div class="ui-dialog-errortips">
+                    <div class="ui-dialog-errortips-text">
+                        <i class="iconfont">&#xe613;</i>
+                        <p class="ui-dialog-errortips-p"></p>
+                        <div class="clearf"></div>
+                    </div>
+                    <div class="ui-dialog-errortips-btn"><button class="ui-button ui-btn-gray ui-errortips-btn">关闭</button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/financingTwo.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

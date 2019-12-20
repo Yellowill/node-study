@@ -1,0 +1,30 @@
+{
+  "name": "tenpay",
+  "version": "1.0.0",
+  "description": "Tenpay project is developed by runyi team",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && gulp build",
+    "clear": "rimraf dist",
+    "dev": "gulp dev",
+    "upload": "gulp upload"
+  },
+  "author": "runyi",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "browser-sync": "^2.24.6",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-cache": "^1.0.2",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-sftp": "^0.1.5",
+    "gulp-uglify": "^3.0.1",
+    "gulp-util": "^3.0.8",
+    "rimraf": "^2.6.2"
+  }
+}

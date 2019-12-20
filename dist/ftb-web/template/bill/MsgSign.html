@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CFCA Paperless CryptoKit Demo</title>
+    <!--<object id="CryptoAgent" codebase="CryptoKit.Paperless.x86.cab" classid="clsid:F7101FFF-55C7-4ECC-903E-C1D8417507D1"></object>-->
+    <script language="javascript" type="text/javascript">
+
+        // Create ActiveX object according to the platform
+        var CryptoAgent = "";
+        function OnLoad() {
+            try {
+                var eDiv = document.createElement("div");
+                if (navigator.appName.indexOf("Internet") >= 0 || navigator.appVersion.indexOf("Trident") >= 0) {
+                    if (window.navigator.cpuClass == "x86") {
+                        eDiv.innerHTML = "<object id=\"CryptoAgent\" codebase=\"CryptoKit.Paperless.x86.cab\" classid=\"clsid:B64B695B-348D-400D-8D58-9AAB1DA5851A\" ></object>";
+                    }
+                    else {
+                        eDiv.innerHTML = "<object id=\"CryptoAgent\" codebase=\"CryptoKit.Paperless.x64.cab\" classid=\"clsid:8BF7E683-630E-4B59-9E61-C996B671EBDF\" ></object>";
+                    }
+                }
+                else {
+                    eDiv.innerHTML = "<embed id=\"CryptoAgent\" type=\"application/npCryptoKit.Paperless.x86\" style=\"height: 0px; width: 0px\">";
+                }
+                document.body.appendChild(eDiv);
+            }
+            catch (e) {
+                alert(e);
+                return;
+            }
+            CryptoAgent = document.getElementById("CryptoAgent");
+        }
+
+        function SelectObjctById(id) {
+            var obj;
+            if (document.getElementById) {
+                obj = document.getElementById(id);
+                //alert("ID");
+            }
+            else if (document.all) {
+                obj = document.all(id);
+                //alert("ALL");
+            }
+            else {
+                alert("The Internet Browser does't support Document all or Document getElementById");
+            }
+            return obj;
+        }
+
+        // Get version
+        function GetVersion_OnClick() {
+            var version = "";
+            try {
+                version = CryptoAgent.GetVersion();
+                alert(version);
+            }
+            catch (e) {
+                var strErrorDsc = CryptoAgent.GetLastErrorDesc();
+                alert(strErrorDsc);
+            }
+        }
+
+        // Select certificate
+        function SelectCertificateOnClick() {
+            try {
+                document.getElementById("SelectCertResult").value = "";
+
+                var subjectDNFilter = "";
+                var issuerDNFilter = "";
+                var serialNumFilter = "";
+				var cspName = "";
+                var bSelectCertResult = "";
+                subjectDNFilter = document.getElementById("SubjectDNFilter").value;
+                issuerDNFilter = document.getElementById("IssuerDNFilter").value;
+                serialNumFilter = document.getElementById("SerialNumFilter").value;
+				cspName = document.getElementById("CSPNameFilter").value;
+
+                bSelectCertResult = CryptoAgent.SelectCertificate(subjectDNFilter, issuerDNFilter, serialNumFilter, cspName);
+                // Opera浏览器，NPAPI函数执行结果为false时，不能触发异常，需要自己判断返回值。
+                if (!bSelectCertResult) {
+                    var errorDesc = CryptoAgent.GetLastErrorDesc();
+                    alert(errorDesc);
+                    return;
+                }
+                document.getElementById("SelectCertResult").value = bSelectCertResult;
+            }
+
+            catch (e) {
+                var errorDesc = CryptoAgent.GetLastErrorDesc();
+                alert(errorDesc);
+            }
+        }
+
+        // Get certificate information
+        function GetCertInfoOnClick() {
+            try {
+                var InfoTypeID = "";
+                var InfoContent = "";
+
+                document.getElementById("CertInfoContent").value = "";
+
+                // certificate information identifier
+                InfoTypeID = GetSelectedItemValue("InfoTypeID");
+
+                InfoContent = CryptoAgent.GetSignCertInfo(InfoTypeID);
+                // Opera浏览器，NPAPI函数执行结果为false时，不能触发异常，需要自己判断返回值。
+                if (!InfoContent) {
+                    var errorDesc = CryptoAgent.GetLastErrorDesc();
+                    alert(errorDesc);
+                    return;
+                }
+                document.getElementById("CertInfoContent").value = InfoContent;
+            } catch (e) {
+                var errorDesc = CryptoAgent.GetLastErrorDesc();
+                alert(errorDesc);
+            }
+        }
+		
+		// Sign P1 message
+        function SignP1OnClick() {
+            try {
+			    var selectedAlg = GetSelectedItemValue("p1algorithm");
+                var sourceHashData = "";
+                var signature = "";
+
+                document.getElementById("P1Signature").value = "";
+                sourceHashData = document.getElementById("P1SourceData").value;
+
+                signature = CryptoAgent.SignMsgPKCS1(sourceHashData,  selectedAlg);
+                if (!signature) {
+                    var errorDesc = CryptoAgent.GetLastErrorDesc();
+                    alert(errorDesc);
+                    return;
+                }
+
+                document.getElementById("P1Signature").value = signature;
+            } catch (e) {
+                var errorDesc = CryptoAgent.GetLastErrorDesc();
+                alert(errorDesc);
+            }
+        }
+		
+		// Sign P7 message
+        function SignP7OnClick() {
+            try {
+			    var selectedAlg = GetSelectedItemValue("p7algorithm");
+                var sourceHashData = "";
+                var signature = "";
+
+                document.getElementById("P7Signature").value = "";
+                sourceHashData = document.getElementById("P7SourceData").value;
+
+                signature = CryptoAgent.SignMsgPKCS7(sourceHashData, selectedAlg, true);
+                if (!signature) {
+                    var errorDesc = CryptoAgent.GetLastErrorDesc();
+                    alert(errorDesc);
+                    return;
+                }
+
+                document.getElementById("P7Signature").value = signature;
+            } catch (e) {
+                var errorDesc = CryptoAgent.GetLastErrorDesc();
+                alert(errorDesc);
+            }
+        }
+
+        // Sign hash message
+        function SignOnClick() {
+            try {
+                var sourceHashData = "";
+                var signature = "";
+
+                document.getElementById("Signature").value = "";
+                sourceHashData = document.getElementById("SourceHashData").value;
+
+                signature = CryptoAgent.SignHashMsgPKCS7Detached(sourceHashData, "SHA-256");
+                if (!signature) {
+                    var errorDesc = CryptoAgent.GetLastErrorDesc();
+                    alert(errorDesc);
+                    return;
+                }
+
+                document.getElementById("Signature").value = signature;
+            } catch (e) {
+                var errorDesc = CryptoAgent.GetLastErrorDesc();
+                alert(errorDesc);
+            }
+        }
+
+        function GetSelectedItemValue(itemName) {
+            var ele = document.getElementsByName(itemName);
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked) {
+                    return ele[i].value;
+                }
+            }
+        }
+
+        function GetSelectedItemIndex(itemName) {
+            var ele = document.getElementsByName(itemName);
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked) {
+                    return i;
+                }
+            }
+        }
+		
+		function GetSealOnClick() {
+		    try {
+		        var p11name = document.getElementById("P11Name").value;
+			    
+			    var sealImage = CryptoAgent.GetSealImage(p11name);
+			    
+			    document.getElementById("SealImage").value = sealImage;
+			} catch (e) {
+			    var errorDesc = CryptoAgent.GetLastErrorDesc();
+                alert(errorDesc);
+			}
+		}
+
+    </script>
+</head>
+<body onload="javascript:OnLoad();">
+    <table border="0" cellpadding="0" cellspacing="0">
+    	<br/>
+		<div>
+            <input id="ButtonGetVersion" type="button" value="获取版本号" onclick="GetVersion_OnClick()" />
+        </div>
+        <br />
+        <tr>
+            <td>
+                <h1>
+                    消息签名与验签</h1>
+            </td>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+    <tr>
+        <td colspan="2">
+            <table id="no1" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td height="30">
+                        证书主题DN：
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="SubjectDNFilter" style="width: 650px">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="30">
+                        颁发者主题DN：
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="IssuerDNFilter" style="width: 650px">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="30">
+                        证书序列号：
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="SerialNumFilter" style="width: 650px">
+                    </td>
+                </tr>
+				<tr>
+					<td height="30">
+						CSP名称(多家CSP用"||"分隔)：
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" id="CSPNameFilter" style="width: 650px">
+					</td>
+				</tr>
+                <tr>
+                    <td height="30">
+                        <input type="button" name="SelectCertificateButton" value="Select certificate [选择证书]"
+                            onclick="SelectCertificateOnClick()">
+                    </td>
+                </tr>
+				
+                <tr>
+                    <td height="30">
+                        选择证书结果(返回值)：
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="SelectCertResult" style="width: 650px">
+                    </td>
+                </tr>
+                <td height="30">
+                    <h3>
+                        获取选定证书的信息</h3>
+                </td>
+                <tr>
+                    <td height="30">
+                        信息类型标识：
+                    </td>
+                </tr>
+                <tr>
+                    <td height="30">
+                        <input type="radio" name="InfoTypeID" value="SubjectDN" checked="checked" />SubjectDN
+                        <input type="radio" name="InfoTypeID" value="SubjectCN" />SubjectCN
+                        <input type="radio" name="InfoTypeID" value="SerialNumber" />SerialNumber
+                        <input type="radio" name="InfoTypeID" value="CSPName" />CSPName
+                        <input type="radio" name="InfoTypeID" value="CertType" />CertType
+						<input type="radio" name="InfoTypeID" value="Issuer" />Issuer
+                        <input type="radio" name="InfoTypeID" value="CertContent" />CertContent
+                    </td>
+                </tr>
+                <tr>
+                    <td height="30">
+                        <input type="button" name="GetCertInfoButton" value="Get Cert Information [获取证书信息]"
+                            onclick="GetCertInfoOnClick()">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="30">
+                        证书信息(返回值)：
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea id="CertInfoContent" rows="8" style="width: 650px"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <br />
+    <hr />
+<label>
+        <h3>
+            PKCS#1消息签名</h3>
+    </label>
+    <label>
+        签名原文：
+        <br />
+        <textarea id="P1SourceData" rows="8" style="width: 650px">
+</textarea>
+    </label>
+    <br />
+		<br />
+	    <label>
+        <td>
+            哈希算法(仅对RSA算法有效，SM2默认使用SM3哈希算法)：
+        </td>
+    </label>
+        <td>
+            <input type="radio" name="p1algorithm" checked="checked" value="SHA-1" />SHA-1
+            <input type="radio" name="p1algorithm" value="SHA-256" />SHA-256          
+        </td>
+    <br />
+    <br />
+    <label>
+        <td>
+            <input type="button" name="SignButton" value="Sign[签名]" onclick="SignP1OnClick()">
+        </td>
+    </label>
+    <br />
+    <br />
+    <label>
+        签名结果：
+        <br />
+        <textarea id="P1Signature" rows="8" style="width: 650px"></textarea>
+    </label>
+    <br />
+    <br />
+	    <hr />
+		<label>
+        <h3>
+            PKCS#7消息签名</h3>
+    </label>
+    <label>
+        签名原文：
+        <br />
+        <textarea id="P7SourceData" rows="8" style="width: 650px">
+</textarea>
+    </label>
+    <br />
+	<br />
+	    <label>
+        <td>
+            哈希算法(仅对RSA算法有效，SM2默认使用SM3哈希算法)：
+        </td>
+    </label>
+        <td>
+            <input type="radio" name="p7algorithm" checked="checked" value="SHA-1" />SHA-1
+            <input type="radio" name="p7algorithm" value="SHA-256" />SHA-256          
+        </td>
+    <br />
+	<br />
+    <label>
+        <td>
+            <input type="button" name="SignButton" value="Sign[签名]" onclick="SignP7OnClick()">
+        </td>
+    </label>
+    <br />
+    <br />
+    <label>
+        签名结果：
+        <br />
+        <textarea id="P7Signature" rows="8" style="width: 650px"></textarea>
+    </label>
+    <br />
+    <br />
+	    <hr />
+    <label>
+        <h3>
+            PKCS#7分离式哈希签名</h3>
+    </label>
+    <label>
+        Base64编码的签名原文Hash值：
+        <br />
+        <input type="text" id="SourceHashData" style="width: 650px"></input>
+    </label>
+    <br />
+    <br />
+    <label>
+        <td>
+            <input type="button" name="SignButton" value="Sign[签名]" onclick="SignOnClick()">
+        </td>
+    </label>
+    <br />
+    <br />
+    <label>
+        签名结果：
+        <br />
+        <textarea id="Signature" rows="8" style="width: 650px"></textarea>
+    </label>
+    <br />
+    <br />
+	    <hr />
+       <h3>
+            获取印章数据</h3>
+    </label>
+    <label>
+        PKCS11名称：
+        <br />
+        <input type="text" id="P11Name" style="width: 650px"></input>
+    </label>
+    <br />
+    <br />
+    <label>
+        <td>
+            <input type="button" name="GetButton" value="Get[获取]" onclick="GetSealOnClick()">
+        </td>
+    </label>
+    <br />
+    <br />
+    <label>
+        印章数据（Base64编码）：
+        <br />
+        <textarea id="SealImage" rows="8" style="width: 650px"></textarea>
+    </label>
+    <br />
+    <br />
+</body>
+</html>

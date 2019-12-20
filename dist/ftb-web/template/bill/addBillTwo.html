@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>开立通宝</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css" />
+    <link rel="stylesheet" href="../../base/css/base.css" />
+    <link rel="stylesheet" href="../../base/css/module.css" />
+    <link rel="stylesheet" href="../res/css/skin.css" />
+    <link rel="stylesheet" href="../res/css/data-page.css" />
+</head>
+<body class="g-navbar-fixed selectInvoice-height100">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="ui-menu"></div>
+    <div class="g-page-mini-main selectInvoice">
+        <div class="g-nav">
+            <div class="g-nav-title">
+                <i class="iconfont">&#xe601;</i><span class="g-font18 mar-left-10 mar-right-20">选择发票</span><span class="g-font12"><span style="font-weight: bold;color:#ea544a;">温馨提示：</span><span style="color:#ea544a;">若实际业务情况需拆分发票金额，可选择发票并直接填写发票的本次使用金额。</span></span>
+                <a href="javascript:;" id="add-invoice" class="g-right">新增发票</a>
+            </div>
+        </div>
+        <div class="g-container">
+            <div class="search-wrap">
+                <label style="margin-left: 5px;" for="invoiceDate">开票日期：</label>
+                <select name="" id="invoiceDate">
+                    <option value="0">全部</option>
+                    <option value="1">近一月</option>
+                    <option value="2">近两月</option>
+                    <option value="3">近三月</option>
+                    <option value="4">三个月前</option>
+                </select>
+                <span class="relative searcher"><label style="margin-left: 5px;" for="invoiceNo">发票号码：</label><input style="width: 100px;" id="invoiceNo" type="text" /><i class="iconfont">&#xe74e;</i></span>
+                <label style="margin-left: 5px;" for="buycom">购方：</label>
+                <select name="" id="buycom">
+                </select>
+                <label style="margin-left: 5px;" for="givecom">销方：</label>
+                <select name="" id="givecom">
+                </select>
+                <a style="margin-left: 10px;" href="javascript:;" class="search-btn" id="iptSearch">查询</a>
+
+                <a style="margin-left: 10px;" href="javascript:;" class="search-btn" id="reSubmit">重置</a>
+            </div>
+            <div class="invoice-con-wrap">
+                <div id="scroll-bar" class="invoice-con">
+                    <div class="invoice-wrap">
+                        <ul class="invoice-box-wrap clearBoth">
+                            <!--<div class="invoice-box-holder">-->
+                                <!--<li class="invoice-box">-->
+                                    <!--<div class="invoice-head">-->
+                                        <!--<i class="iconfont">&#xe62a</i>发票号码<span class="invoice-num">03608001</span><a class="more-btn" href="javascript:;">详情</a><i class="iconfont arrow">&#xe72e;</i>-->
+                                        <!--<div class="check-box iconfont">&#xe74c;</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="invoice-body">-->
+                                        <!--<ul>-->
+                                            <!--<div>发票代码<span class="invoice-code">3100009876</span></div>-->
+                                            <!--<div>含税金额<span class="amountTax">1,800,000.11</span></div>-->
+                                            <!--<div>开票日期<span class="invoice-date">2018-09-09</span></div>-->
+                                            <!--<div>税率<span class="tax-rate">17%</span></div>-->
+                                            <!--<div>购买方<span class="buyer">上海欧冶金融股份有限公司</span></div>-->
+                                            <!--<div>销售方<span class="saler">上海欧冶金融股份有限公司</span></div>-->
+                                            <!--<div class="bottom-action">-->
+                                                <!--<a href="javascript:;" class="iconfont invoice-del">&#xe603;</a>-->
+                                                <!--<a href="javascript:;" class="iconfont invoice-down">&#xe67b;</a>-->
+                                            <!--</div>-->
+                                        <!--</ul>-->
+                                    <!--</div>-->
+                                <!--</li>-->
+                            <!--</div>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="selectInvoice-footer">
+            <div class="footer-main">
+                <div style="float:left;cursor: pointer;">
+                    <span id="selectAll" class="no-check"><i class="iconfont" ></i><span style="margin-left:10px;">全选</span></span>
+                    <span id="noselectAll" style="display: none;" class="all-check"><i class="iconfont" ></i><span style="margin-left:10px;">取消全选</span></span>
+                </div>
+
+                <a href="javascript:;" class="submit-btn" id="billSubmit">提交通宝</a>
+                <a style="float:right;margin-top:20px;margin-right:8px;" href="addBill.html" class="prevStep">上一步</a>
+                <a href="billDetail.html" target="_blank" class="preview" id="preview">预览</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="tb-info">
+        <div class="tb-con">
+            <div class="info-title">发票金额</div>
+            <div class="info-con">
+                <div class="createNum">发票共计：<span class="totalNo"></span></div>
+                <div class="totalNo-cn g-text-right g-font12"></div>
+                <div class="createNum">开立金额：<span class="createNo"></span></div>
+                <div class="createNo-cn g-text-right g-font12"></div>
+            </div>
+            <div class="select-con clearBoth">
+                <div class="select-info">已选<b class="selectNum">0</b></div>
+                <div class="include-tax">(含税)</div>
+                <div class="selectNum-cn g-text-right g-font12"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="scrollbox" id="scrollbox"></div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/addBillTwo.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>融资申请列表</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css"/>
+    <link rel="stylesheet" href="../../base/css/base.css"/>
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+    <link rel="stylesheet" href="../res/css/skin.css"/>
+    <link rel="stylesheet" href="../res/css/data-page.css"/>
+</head>
+<body class="g-navbar-fixed">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="ui-menu ui-menu-bg"></div>
+    <div class="g-page-main page-demo financingList">
+        <div class="g-nav">
+            <div class="g-nav-title col-xs-6 g-font20">融资列表</div>
+            <div class="col-xs-6 g-text-right"><span class="ui-button-ghost g-nav-btn ui-btn-red i-want-finance"><i
+                    class="iconfont mar-right-5">&#xe64a;</i>我要融资</span></div>
+        </div>
+        <div class="g-container">
+            <div class="g-row">
+                <div class="g-tabs">
+                    <ul class="g-nav-tabs">
+                        <li class="g-nav-tabs-li active tapAll"><a href="javascript:;">全部<span></span></a></li>
+                        <li class="g-nav-tabs-li tapSubmit"><a href="javascript:;">待提交<span></span></a></li>
+                        <li class="g-nav-tabs-li tosgin"><a href="javascript:;">申请中<span></span></a></li>
+                        <li class="g-nav-tabs-li tapCheck"><a href="javascript:;">审核中<span></span></a></li>
+                        <li class="g-nav-tabs-li tapPay"><a href="javascript:;">已放款<span></span></a></li>
+                        <li class="g-nav-tabs-li tapBack"><a href="javascript:;">撤销/驳回</a></li>
+                        <div class="g-right tabs-right date-sort">
+                            <span class="sort">按融资日期<i class="iconfont g-font12 g-inline-block">&#xe61e;</i></span>
+                        </div>
+                    </ul>
+                    <div class="g-tab-content">
+                        <div class="g-row g-search">
+                            <div class="g-left g-in-search">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">融资日期：</label>
+                                    <div class="g-left">
+                                            <span class="g-input-icon-right g-left">
+                                                <input type="text" readonly="readonly" class="date" id="js-calender-start" name="js-calender-start" placeholder="">
+                                                <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                        <span class="g-input-line col60">—</span>
+                                        <span class=" g-input-icon-right g-left">
+                                                <input type="text" readonly="readonly" placeholder=" " value="" class="date"
+                                                       id="js-calender-stop">
+                                                <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-left g-in-search">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">放款机构：</label>
+                                    <div class="g-left">
+                                        <input type="text" class="institution">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-right g-in-search">
+                                <a href="javascript:;"
+                                   class="ui-button ui-search-button ui-btn-primary g-right">查询</a>
+                            </div>
+                        </div>
+                        <div class="g-tab-main active">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="11%">融资申请编号</th>
+                                        <th width="9%">申请时间</th>
+                                        <th width="9%">申请金额</th>
+                                        <th width="9%">放款金额</th>
+                                        <th width="9%">息费</th>
+                                        <th width="9%">服务费</th>
+                                        <th width="12%">放款机构</th>
+                                        <th width="10%">状态</th>
+                                        <th width="22%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="g-tbody">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="11%">融资申请编号</th>
+                                        <th width="9%">申请时间</th>
+                                        <th width="9%">申请金额</th>
+                                        <th width="9%">放款金额</th>
+                                        <th width="9%">息费</th>
+                                        <th width="9%">服务费</th>
+                                        <th width="12%">放款机构</th>
+                                        <th width="10%">状态</th>
+                                        <th width="22%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="g-tbody">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="11%">融资申请编号</th>
+                                        <th width="9%">申请时间</th>
+                                        <th width="9%">申请金额</th>
+                                        <th width="9%">放款金额</th>
+                                        <th width="9%">息费</th>
+                                        <th width="9%">服务费</th>
+                                        <th width="12%">放款机构</th>
+                                        <th width="10%">状态</th>
+                                        <th width="22%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="g-tbody">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="11%">融资申请编号</th>
+                                        <th width="9%">申请时间</th>
+                                        <th width="9%">申请金额</th>
+                                        <th width="9%">放款金额</th>
+                                        <th width="9%">息费</th>
+                                        <th width="9%">服务费</th>
+                                        <th width="12%">放款机构</th>
+                                        <th width="10%">状态</th>
+                                        <th width="22%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="g-tbody">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="11%">融资申请编号</th>
+                                        <th width="9%">申请时间</th>
+                                        <th width="9%">申请金额</th>
+                                        <th width="9%">放款金额</th>
+                                        <th width="9%">息费</th>
+                                        <th width="9%">服务费</th>
+                                        <th width="12%">放款机构</th>
+                                        <th width="10%">状态</th>
+                                        <th width="22%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="g-tbody">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="11%">融资申请编号</th>
+                                        <th width="9%">申请时间</th>
+                                        <th width="9%">申请金额</th>
+                                        <th width="9%">放款金额</th>
+                                        <th width="9%">息费</th>
+                                        <th width="9%">服务费</th>
+                                        <th width="12%">放款机构</th>
+                                        <th width="10%">状态</th>
+                                        <th width="22%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="g-tbody">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-table-bottom">
+                            <div class="g-right">
+                                <div id="page"></div>
+                                <div class="mar-left-5 page-content">共<span class="pageTotal"></span>条记录 共<span class="pageCount"></span>页</div>
+                            </div>
+                            <div class="g-clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/financingList.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

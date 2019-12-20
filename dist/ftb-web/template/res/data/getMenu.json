@@ -1,0 +1,84 @@
+{
+	"menu": [{
+		"name": "通宝开立管理",
+		"icon": "&#xe761;",
+		"fontsize": "g-font20",
+		"href": "javascript:;",
+		"sub": [{
+			"name": "通宝开立",
+			"href": "../bill/billIssue.html"
+			}, {
+				"name": "通宝复核",
+				"href": "../bill/billExamine.html"
+			},{
+			"name": "债权转让通知",
+			"href": "../bill/noticeTransfer.html"
+			}, {
+			"name": "通宝兑付列表",
+			"href": "../bill/billHonour.html"
+			}]
+		},{
+		"name":"通宝流转管理",
+		"icon":"&#xe600;",
+		"fontsize":"g-font22",
+		"href":"javascript:;",
+		"sub":[{
+			"name":"通宝转让",
+			"href": "../bill/transferBill.html"
+			},{
+			"name": "通宝受让",
+			"href": "../bill/assigneeBill.html"
+			}]
+		}, {
+		"name": "通宝融资管理",
+		"icon": "&#xe729;",
+		"fontsize": "g-font22",
+		"href": "javascript:;",
+		"sub": [{
+			"name": "融资申请列表",
+			"href": "../bill/financingList.html"
+			}]
+		},{
+		"name":"我的通宝",
+		"icon":"&#xe685;",
+		"fontsize":"g-font22",
+		"href":"javascript:;",
+		"sub":[{
+			"name":"我的通宝",
+			"href":"../basic/myCurrency.html"
+		}]
+	}, {
+		"name":"发票管理",
+		"icon":"&#xe616;",
+		"fontsize":"g-font18",
+		"href":"javascript:;",
+		"sub":[{
+			"name":"发票管理",
+			"href":"../basic/InvoiceManagement.html"
+		}]
+	},
+		{
+			"name": "账号管理",
+			"icon": "&#xe680;",
+			"fontsize": "g-font22",
+			"href": "javascript:;",
+			"sub": [{
+				"name": "统一账户管理",
+				"href": "../basic/account.html"
+			}]
+		},
+		{
+			"name": "协议管理",
+			"icon": "&#xe680;",
+			"fontsize": "g-font22",
+			"href": "javascript:;",
+			"sub": [{
+				"name": "平台协议",
+				"href": "../basic/platformContracts.html"
+			},{
+				"name": "债权转让协议",
+				"href": "../basic/transferContracts.html"
+			}]
+		}
+	]
+}

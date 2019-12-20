@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>通宝融资</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css" />
+    <link rel="stylesheet" href="../../base/css/base.css" />
+    <link rel="stylesheet" href="../../base/css/module.css" />
+    <link rel="stylesheet" href="../res/css/skin.css" />
+    <link rel="stylesheet" href="../res/css/data-page.css" />
+</head>
+<body class="g-navbar-fixed addBill">
+<style type="text/css">
+    .moxie-shim{
+        z-index: 500!important;
+    }
+</style>
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="ui-menu"></div>
+    <div class="g-page-main page-demo financingConfirm">
+        <div class="g-nav">
+            <i class="iconfont">&#xe601;</i><span class="g-nav-title g-font18">补充公司信息</span>
+        </div>
+        <div class="g-container">
+            <div class="ui-addInfo-claim">
+                <div class="ui-addInfo-claim-box">
+                    <span class="ui-addInfo-bold">温馨提示：</span>按金融机构融资管理要求，需提供公司及人员相关材料。请按页面提示进行材料补充或更新。若融资遇到问题请联系客户经理或4008201688、95025。
+                </div>
+            </div>
+            <div class="ui-addInfo-form">
+                <div class="ui-addInfo-form-section">
+                    <div class="ui-addInfo-tit">
+                        公司信息
+                    </div>
+                    <div class="ui-addInfo-form-group" style="position: relative;">
+                        <div id="rules-uploaded" style="display: none;">
+                            <div class="ui-addInfo-form-widget">
+                                <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                    <span class="dec">* </span>征信授权书：
+                                </div>
+                                <div class="ui-addInfo-widget-input">
+                                    <input id="rules-name" type="text" readonly="readonly" value="文件名" class="readonly"><a id="rules-download" href="javascript:void(0);">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>|</span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div style="border:none;padding: 0;left: 104%;" class="ui-addInfo-form-widget-info">
+
+                                    <!--                                <img src="res/images/bubble-arrow.png" class="bubble-arrow">-->
+                                    <!-- 这里label的for属性要对应input的id -->
+                                    <label id="rerules">重新上传</label>
+                                </div>
+
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div id="rules-upload" >
+                            <div class="ui-addInfo-form-widget">
+                                <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                    <span class="dec">* </span>征信授权书：
+                                </div>
+                                <div class="ui-addInfo-widget-input">
+                                    <!-- 这里label的for属性要对应input的id -->
+                                    <label id="rules" class="file-label">
+                                        <span class="up-filename">点击上传附件</span>
+                                        <span class="up-browse">浏览</span>
+                                    </label>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="g-form-group" style="position: absolute; right: 35px; top: 0px;">
+                            <span class="dec g-left" style="color:#f00;line-height: 26px;margin-right: 5px;">* </span><label class="col40 g-left" style="line-height: 28px">授权日期：</label>
+                            <div class="g-left">
+                                <span class="g-input-icon-right g-left">
+                                    <input type="text" readonly="readonly" id="js-calender-start2" placeholder="">
+                                    <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                </span>
+                                <span class="g-input-line col60">—</span>
+                                <span class=" g-input-icon-right g-left">
+                                    <input type="text" placeholder=" " readonly="readonly" value=""
+                                           id="js-calender-end2">
+                                    <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                </span>
+                            </div>
+                            <div class="clear"></div>
+                            <div style="margin-top: 26px; margin-left: 10px;">
+                                <i class="iconfont notice-icon" style="margin-right:5px;">&#xe797;</i><span style="color: #dba772;">有效期一般为自授权书签署日起1年</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-left: 186px;margin-bottom: 20px;"><i class="iconfont notice-icon" style="margin-right:5px;">&#xe797;</i>点击<a style="cursor: pointer;" href="../res/data/creditGrant.pdf" target="_blank">下载征信授权书模板</a></div>
+                    <div class="ui-addInfo-form-group">
+                        <div id="licence-uploaded" style="display: none;">
+                            <div  class="ui-addInfo-form-widget">
+                                <div style="width:115px;" class="ui-addInfo-widget-name">
+                                    <span class="dec">* </span>数字证书使用承诺函：
+                                </div>
+                                <div class="ui-addInfo-widget-input">
+                                    <input id="licence-name" type="text" readonly="readonly" class="readonly"><a id="licence-download" href="javascript:void(0);">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>|</span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div style="border:none;padding: 0;left: 104%;" class="ui-addInfo-form-widget-info">
+
+                                    <!--                                <img src="res/images/bubble-arrow.png" class="bubble-arrow">-->
+                                    <!-- 这里label的for属性要对应input的id -->
+                                    <label id="relicence">重新上传</label>
+                                </div>
+
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div id="licence-upload" >
+                            <div class="ui-addInfo-form-widget">
+                                <div style="width:115px;" class="ui-addInfo-widget-name">
+                                    <span class="dec">* </span>数字证书使用承诺函：
+                                </div>
+                                <div class="ui-addInfo-widget-input">
+                                    <!-- 这里label的for属性要对应input的id -->
+                                    <label id="licence" class="file-label">
+                                        <span class="up-filename">点击上传附件</span>
+                                        <span class="up-browse">浏览</span>
+                                    </label>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div style="margin-left: 186px;margin-bottom: 20px;"><i class="iconfont notice-icon" style="margin-right:5px;">&#xe797;</i>点击<a style="cursor: pointer;" href="../res/data/digitalLicence.pdf" target="_blank">下载数字证书使用承诺函</a></div>
+                    <div class="ui-addInfo-form-group">
+                        <div id="licencse-upload">
+                            <div class="ui-addInfo-form-widget">
+                                <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                    <span class="dec">* </span>营业执照：
+                                </div>
+                                <div class="ui-addInfo-widget-input">
+                                    <!-- 这里label的for属性要对应input的id -->
+                                    <label id="licencse" class="file-label">
+                                        <span class="up-filename">点击上传附件</span>
+                                        <span class="up-browse">浏览</span>
+                                    </label>
+                                    <!--<a href="javascript:void(0);" class="unique"><i class="iconfont">&#xe6dd;</i>&nbsp;<span>查看示例</span></a>-->
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div id="licencse-uploaded" style="display: none;">
+                            <div class="ui-addInfo-form-widget">
+                                <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                    <span class="dec">* </span>营业执照：
+                                </div>
+                                <div class="ui-addInfo-widget-input">
+                                    <input id="licencse-name" type="text" readonly="readonly" class="readonly"><a id="licencse-download" href="javascript:void(0);">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>|</span>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div style="border:none;padding: 0;left: 104%;" class="ui-addInfo-form-widget-info">
+
+                                    <!--                                <img src="res/images/bubble-arrow.png" class="bubble-arrow">-->
+                                    <!--<input type="file" id="file2">-->
+                                    <!-- 这里label的for属性要对应input的id -->
+                                    <label id="relicencse">重新上传</label>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <!--<div class="ui-addInfo-form-group">-->
+                        <!--<div id="report-upload">-->
+                            <!--<div class="ui-addInfo-form-widget">-->
+                                <!--<div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">-->
+                                    <!--<span class="dec">* </span>财务报表：-->
+                                <!--</div>-->
+                                <!--<div class="ui-addInfo-widget-input">-->
+                                    <!--&lt;!&ndash; 这里label的for属性要对应input的id &ndash;&gt;-->
+                                    <!--<label id="report" class="file-label">-->
+                                        <!--<span class="up-filename">点击上传附件</span>-->
+                                        <!--<span class="up-browse">浏览</span>-->
+                                    <!--</label>-->
+                                    <!--&lt;!&ndash;<a href="javascript:void(0);" class="unique"><i class="iconfont">&#xe6dd;</i>&nbsp;<span>查看示例</span></a>&ndash;&gt;-->
+                                    <!--<div class="clear"></div>-->
+                                <!--</div>-->
+
+                                <!--<div class="clear"></div>-->
+                            <!--</div>-->
+                            <!--<div class="clear"></div>-->
+                        <!--</div>-->
+                        <!--<div id="report-uploaded" style="display: none;">-->
+                            <!--<div class="ui-addInfo-form-widget">-->
+                                <!--<div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">-->
+                                    <!--<span class="dec">* </span>财务报表：-->
+                                <!--</div>-->
+                                <!--<div class="ui-addInfo-widget-input">-->
+                                    <!--<input id="report-name" type="text" readonly="readonly" class="readonly"><a id="report-download" href="javascript:void(0);">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>|</span>-->
+                                    <!--<div class="clear"></div>-->
+                                <!--</div>-->
+
+                                <!--<div style="border:none;padding: 0;left: 104%;" class="ui-addInfo-form-widget-info">-->
+
+                                    <!--&lt;!&ndash;                                <img src="res/images/bubble-arrow.png" class="bubble-arrow">&ndash;&gt;-->
+                                    <!--<input type="file" id="file2">-->
+                                    <!--&lt;!&ndash; 这里label的for属性要对应input的id &ndash;&gt;-->
+                                    <!--<label id="rereport" for="file2">重新上传</label>-->
+                                <!--</div>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</div>-->
+                            <!--<div class="clear"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="ui-addInfo-form-hr"></div>
+                <div class="ui-addInfo-form-section">
+                    <div class="ui-addInfo-tit">
+                        法定代表人证件信息
+                    </div>
+                    <div class="ui-addInfo-form-group">
+                        <div class="ui-addInfo-form-widget">
+                            <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                <span class="dec">* </span>证件类型：
+                            </div>
+                            <div class="ui-addInfo-widget-input">
+                                <select name="" id="legal-select">
+                                    <option value="0">身份证</option>
+                                    <option value="1">户口簿</option>
+                                    <option value="2">护照</option>
+                                    <option value="3">军官证</option>
+                                    <option value="4">士兵证</option>
+                                    <option value="5">港澳居民来往内地通行证</option>
+                                    <option value="6">台湾同胞来往内地通行证</option>
+                                    <option value="7">临时身份证</option>
+                                    <option value="8">外国人居留证</option>
+                                    <option value="9">警官证</option>
+                                    <option value="A">香港身份证</option>
+                                    <option value="B">澳门身份证</option>
+                                    <option value="C">台湾身份证</option>
+                                    <option value="X">其他证件</option>
+                                </select>
+                            </div>
+                            <div class="ui-addInfo-error-message">
+                                <!-- 错误提示 -->
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="ui-addInfo-form-widget">
+                            <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                <span class="dec">* </span>证件号码：
+                            </div>
+                            <div class="ui-addInfo-widget-input">
+                                <input type="text" id="legal-no">
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="ui-addInfo-form-group">
+                        <div class="ui-addInfo-form-widget">
+                            <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                <span class="dec">* </span>姓名：
+                            </div>
+                            <div class="ui-addInfo-widget-input">
+                                <input id="legal-uname" type="text">
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+                        <div class="ui-addInfo-form-widget">
+                            <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                <span class="dec">* </span>证件注册日：
+                            </div>
+                            <div class="ui-addInfo-widget-input">
+                                <input id="js-calender-start1" class="date" readonly="readonly" type="text"><div class="date-icon"><i class="iconfont">&#xe67f;</i></div>
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="ui-addInfo-form-group">
+                        <div class="ui-addInfo-form-widget">
+                            <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                <span class="dec">* </span>证件到期日：
+                            </div>
+                            <div class="ui-addInfo-widget-input">
+                                <input id="js-calender-end1" class="date" readonly="readonly" type="text"><div class="date-icon"><i class="iconfont">&#xe67f;</i></div>
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+                        <div id="legal-uploaded" style="display: none;">
+                            <div class="ui-addInfo-form-widget">
+                                <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                    <span class="dec">* </span>上传附件：
+                                </div>
+                                <div class="ui-addInfo-widget-input">
+                                    <input id="legal-name" type="text" readonly="readonly" class="readonly"><a id="legal-download" href="javascript:void(0);">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>|</span>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div style="border:none;padding: 0;left:103%;" class="ui-addInfo-form-widget-info">
+                                    <label id="relegal">重新上传</label>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div id="legal-upload">
+                            <div class="ui-addInfo-form-widget">
+                                <div style="width:115px;margin-bottom: 20px;" class="ui-addInfo-widget-name">
+                                    <span class="dec">* </span>上传附件：
+                                </div>
+                                <div class="ui-addInfo-widget-input">
+                                    <!-- 这里label的for属性要对应input的id -->
+                                    <label id="legal" class="file-label">
+                                        <span class="up-filename">点击上传附件</span>
+                                        <span class="up-browse">浏览</span>
+                                    </label>
+                                </div>
+
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <label>
+                        <input id="check-confirm" class="g-form-check" type="checkbox" checked="checked">
+                        <span class="g-form-lbl"> &nbsp;<a target="_blank" href="./attorney.html">我已阅读《授权委托书》</a></span>
+                    </label>
+                </div>
+                <div class="ui-addInfo-form-hr"></div>
+                <div class="g-text-center mar-top-10" style="margin-bottom: 50px">
+                    <a id="js-prev" href="javascript:history.go(-1);" class="ui-detail-btn-return mar-right-20">上一步</a>
+                    <a id="save" href="JavaScript:;" class="ui-detail-btn-confirm mar-left-20 mar-right-20 js-next">确认提交</a>
+                    <a id="js-revoke" href="JavaScript:;" class="ui-detail-btn-return mar-left-20">撤销</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/companyInfoTwo.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

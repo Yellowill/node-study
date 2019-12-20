@@ -1,0 +1,186 @@
+<style type="text/css">
+    .clearBoth:after{clear:both;content:"";height:0;display: block;}
+    .g-left{float:left}
+    .g-right{float:right;}
+    .g-text-left{text-align: left;}
+    .g-text-right{text-right:right;}
+    .hd-label { font-size: 13px;font-family: '楷体';color: #9e520a;font-weight: normal; }
+    .hd-holder { font-size: 13px;font-family: '宋体';color: #000; }
+    .hd-border { border: 1px solid #9e520a; }
+    .ui-dialog-box{ width: 1000px; height: 580px; position: relative; visibility: hidden; box-sizing: content-box; }
+    .main-con { width: 804px;margin: auto;}
+    .main-head { height: 40px; font-size: 26px;font-family: '楷体';color: #9e520a;width: 230px;margin:20px auto 0;text-align: center;border-bottom: 4px double #800000;letter-spacing: 10px;padding-left: 10px; }
+    .main-title {height: 20px;margin-top: 20px;text-align: right;}
+    .main-title .hd-label { margin-left: 15px; }
+    .hd-labelInfo { width: 80px;letter-spacing: 15px;padding-left: 18px; }
+    .hd-labelInfo-one { width: 90px;letter-spacing: 20px;padding-left: 20px; }
+    .hd-labelInfo-two { width: 120px;letter-spacing: 8px;padding-left: 18px; }
+    .hd-labelInfo-three { width: 120px;letter-spacing: 3px;padding-left: 18px; }
+    .hd-labelInfo-four { width: 120px;padding-left: 18px; }
+    .hd-holderInfo { width: 280px;padding-left: 10px; }
+    .hd-tb { border: 1px solid #9e520a;width: 100%; }
+    .hd-tb td { height: 40px;border: 1px solid #9e520a; }
+    .hd-tb th { height: 40px;border: 1px solid #9e520a; }
+    #redSign { position: absolute;right: 16px;top: 210px;width: 130px;opacity: .8}
+    .tb-info { margin-top: 30px; }
+    .tb-info td { border-top: 0;border-bottom: 0; }
+    .line-num { width: 32px;text-align: center; }
+    .own-member { text-align: left;padding-left: 10px; }
+    .cash-num { text-align: right;padding-right: 10px;width: 100px; }
+    .num-wrap { height: 100%;text-align: center; border-left: 0.5px solid #9e520a;float: right; }
+    .num-top { line-height: 16px;width: 20px;height: 16px;border-bottom: 0.5px solid #800000; }
+    .num-bot { line-height: 26px; }
+    #cashTable2 th { border-left: 0; }
+    #cashBody2 td { border-left: 0; }
+    .contract{
+        width: 100%;
+        height: 540px;
+        overflow: auto;
+    }
+</style>
+<div class="ui-dialog-box">
+    <div class="contract">
+        <div class="main-con relative">
+            <img src="../res/images/redSign.png" alt="" id="redSign">
+            <div class="main-head">通宝兑付凭证</div>
+            <div class="main-title relative">
+                <img style="position: absolute;width: 100px;height: auto;left: 0px;bottom: 20px;" src="../res/images/logo.png" alt="">
+                <span class="hd-label">通宝编号：</span><span class="hd-holder" id="billNo"></span>
+                <span class="hd-label">开立日期：</span><span class="hd-holder" id="releaseDate"></span>
+            </div>
+            <table class="hd-tb relative" border="1" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td style="padding: 0 10px;line-height: 20px;width: 20px;" class="hd-label" rowspan="2">开立方</td>
+                    <td class="hd-label hd-labelInfo">全称</td>
+                    <td class="hd-holder hd-holderInfo" id="createName"></td>
+                    <td style="padding: 0 10px;line-height: 20px;width: 20px;" class="hd-label" rowspan="2">接收方</td>
+                    <td class="hd-label hd-labelInfo">全称</td>
+                    <td class="hd-holder hd-holderInfo" id="revName"></td>
+                </tr>
+                <tr>
+                    <td class="hd-label hd-labelInfo">税号</td>
+                    <td class="hd-holder hd-holderInfo" id="taxNumCreate"></td>
+                    <td class="hd-label hd-labelInfo">税号</td>
+                    <td class="hd-holder hd-holderInfo" id="taxNumRev"></td>
+                </tr>
+                <tr>
+                    <td align="center" class="hd-label" colspan="2">兑付总金额</td>
+                    <td colspan="4">
+                        <span class="hd-label" style="position: relative;top: 15px;">（大写）</span><span style="position: relative;top: 15px;" class="hd-holder" id="billAmount_cn"></span>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">分</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">角</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">元</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">十</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">百</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">千</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">万</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">十</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">百</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">千</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                        <div class="num-wrap">
+                            <div class="hd-label num-top">亿</div>
+                            <div class="hd-holder num-bot"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="hd-label" align="center">开立金额</td>
+                    <td colspan="1" class="hd-holder hd-holderInfo" id="createNum"></td>
+                    <td colspan="2" class="hd-label" align="center">兑付完成日期</td>
+                    <td colspan="1" class="hd-holder hd-holderInfo" id="cashDate"></td>
+                </tr>
+                <tr>
+                    <td style="line-height: 1.4;padding: 10px 158px 10px 15px;" class="hd-label" colspan="6">备注：“兑付完成日期”指东方付通收到开立方兑付金额的日期。最终持有人的资金实际到账时间以东方付通完成资金划拨时间为准。本《通宝兑付凭证》用于证明通宝兑付完成情况。若本《通宝兑付凭证》有任何涂抹或修改的痕迹，均视为无效。本《通宝兑付凭证》解释权归平台所有，最终以平台账户记录为准。</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="tb-info relative" >
+                <table style="border-top: 0;border-left: 0;border-right: 0;" class="hd-tb relative" border="1" cellspacing="0" cellpadding="0">
+
+                    <tbody id="">
+                    <tr>
+                        <td width="50%" style="border: 0">
+                            <table style="border: 0;" class="hd-tb relative" border="0" cellspacing="0" cellpadding="0">
+                                <thead>
+                                <tr>
+                                    <th class="hd-label line-num">序号</th>
+                                    <th class="hd-label own-member">最终持有人</th>
+                                    <th class="hd-label">兑付金额</th>
+                                </tr>
+                                </thead>
+                                <tbody id="cashBody">
+                                <tr>
+                                    <td class="hd-holder line-num"></td>
+                                    <td class="hd-holder own-member"></td>
+                                    <td class="hd-holder cash-num"></td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </td>
+                        <td width="50%" style="border: 0;">
+                            <table id="cashTable2" class="hd-tb relative" style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+                                <thead>
+                                <tr>
+                                    <th class="hd-label line-num">序号</th>
+                                    <th class="hd-label own-member">最终持有人</th>
+                                    <th class="hd-label">兑付金额</th>
+                                </tr>
+                                </thead>
+                                <tbody id="cashBody2">
+                                <tr>
+                                    <td class="hd-holder line-num"></td>
+                                    <td class="hd-holder own-member"></td>
+                                    <td class="hd-holder cash-num"></td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="hd-label pad-left-10 mar-top-5">记账建议：开立方记账 &nbsp;借：应付账款-接收方</div>
+            <div class="hd-label pad-left-10 mar-top-5" style="padding-left: 153px;">贷：应付账款-通宝编号</div>
+        </div>
+    </div>
+    <div class="button-box g-text-right" style="position: absolute;bottom: 20px;right: 0;margin:0 98px;" >
+        <a href="javascript:;" class="ui-button-ghost ui-btn-red objection-btn">下载</a>
+        <a href="javascript:;" class="ui-button-ghost ui-btn-blue objection-btn-close mar-left-10">取消</a>
+    </div>
+</div>

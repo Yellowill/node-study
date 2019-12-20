@@ -1,0 +1,45 @@
+{
+	"affairInfo": [
+		{
+			"time":"2018-08-05",
+			"status":0,
+			"money":34599,
+			"iconShow":false,
+			"icon":"&#xe614;",
+			"remaingDays":2
+		},
+		{
+			"time":"2018-08-22",
+			"status":1,
+			"money":34599,
+			"iconShow":true,
+			"icon":"&#xe614;",
+			"remaingDays":2
+		},
+		{
+			"time":"2018-08-30",
+			"status":1,
+			"money":34599,
+			"iconShow":true,
+			"icon":"&#xe614;",
+			"remaingDays":10
+		},
+		{
+			"time":"2018-09-30",
+			"status":1,
+			"money":34599,
+			"iconShow":true,
+			"icon":"&#xe614;",
+			"remaingDays":40
+		},
+		{
+			"time":"2019-01-30",
+			"status":1,
+			"money":34599,
+			"iconShow":true,
+			"icon":"&#xe614;",
+			"remaingDays":411
+		}
+	]
+
+}

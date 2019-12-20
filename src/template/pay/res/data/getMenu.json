@@ -1,0 +1,61 @@
+﻿{
+	"menu": [{
+		"name": "工作台",
+		"icon": "&#xe679;",
+		"fontsize": "font16",
+		"href": "workbench.html"
+	}, {
+		"name": "金单开立管理",
+		"icon": "&#xe761;",
+		"fontsize": "font20",
+		"href": "javascript:;",
+		"sub": [{
+			"name": "金单开立",
+			"icon": "&#xe601;",
+			"href": "javascript:;"
+		}, {
+			"name": "债券转让通知",
+			"icon": "&#xe601;",
+			"href": "javascript:;"
+		}, {
+			"name": "金单兑付列表",
+			"icon": "&#xe601;",
+			"href": "javascript:;"
+		}]
+	}, {
+		"name": "金单流转管理",
+		"icon": "&#xe600;",
+		"fontsize": "font25",
+		"href": "javascript:;",
+		"sub": [{
+			"name": "金单流转管理",
+			"icon": "&#xe601;",
+			"href": "javascript:;"
+		}]
+	}, {
+		"name": "金单融资管理",
+		"icon": "&#xe729;",
+		"fontsize": "font24",
+		"href": "javascript:;",
+		"sub": [{
+			"name": "金单融资管理",
+			"icon": "&#xe601;",
+			"href": "javascript:;"
+		}]
+	}, {
+		"name": "账户查询",
+		"icon": "&#xe607;",
+		"fontsize": "font24",
+		"href": "javascript:;"
+	}, {
+		"name": "基础管理",
+		"icon": "&#xe60f;",
+		"fontsize": "font21",
+		"href": "javascript:;"
+	}, {
+		"name": "结算管理",
+		"icon": "&#xe680;",
+		"fontsize": "font23",
+		"href": "javascript:;"
+	}]
+}

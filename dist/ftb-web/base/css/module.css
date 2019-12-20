@@ -1,0 +1,209 @@
+/*城市三级联动控件样式*/
+.g-pop-container {position: absolute;-webkit-transition: all ease-out .3s;transition: all ease-out .3s;}
+.g-pop-container.left-top .g-pop-shadow{left:3px;top:3px;right:-3px;bottom:-3px;}
+.g-pop-container.right-top .g-pop-shadow{left:-3px;top:3px;right:3px;bottom:-3px;}
+.g-pop-container.left-bottom .g-pop-shadow{left:3px;top:-3px;right:-3px;bottom:3px;}
+.g-pop-container.right-bottom .g-pop-shadow{left:-3px;top:-3px;right:3px;bottom:3px;}
+.g-pop-shadow {position: absolute;z-index: 1;opacity: 0.6;filter: alpha(opacity=60);}
+.g-pop-content {border: solid 1px transparent;z-index: 2;position: relative;padding: 5px;}
+.g-pop-tab {border-bottom: solid 2px transparent;position: relative;}
+.g-pop-tab ul {position: relative;height: 31px;}
+.g-pop-tab ul li {line-height: 28px;height: 30px;font-size: 12px;position: relative;padding: 0 10px;border: solid 1px transparent;border-bottom: none;margin-right: 5px;float: left;cursor: pointer;white-space: nowrap;}
+.g-pop-tab ul li.current {border: solid 2px transparent;border-bottom: none;padding: 0 9px;line-height: 28px;height: 31px;}
+.g-pop-tab ul li i {position: relative;margin-left: 2px;}
+.g-pop-main {position: relative;}
+.g-pop-close {position: absolute;right: 10px;top: 10px;z-index: 100;cursor: pointer; -webkit-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
+.g-pop-load {position: relative;height: 120px;}
+.g-pop-load img {position: absolute;left: 50%;top: 50%;margin: -5px 0 0 -12px;}
+.g-pop-load p {position: absolute;left: 0;right: 0;top: 50%;margin-top: -12px;text-align: center;}
+.g-pop-item {padding: 5px 0 0 0;position: relative;float: none;width: auto;}
+.g-pop-item ul {height: 1%;overflow: hidden;position: relative;}
+.g-pop-item ul li {width: 55px;padding-left: 12px;float: left;height: 24px;}
+.g-pop-item ul li a { display: block;float: left;width: 100%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+/*城市三级联动控件样式结束*/
+/*日历控件样式开始*/
+.g-pop-tip{ margin-bottom:5px;padding:0 10px;}
+.g-pop-tab ul.mini{padding-left:10px;}
+.g-pop-tab ul.mini li{border:none;line-height:32px;margin:0;height:31px;}
+.g-pop-tab ul.mini li.current{padding:0 8px;line-height:28px;} 
+.g-pop-item ul li.mini{padding-left:20px;}
+.g-pop-item ul li a:hover{text-decoration:underline; }
+.g-pop-list{position:relative;padding-left:40px;}
+.g-pop-label{position:absolute;left:20px;top:0;}
+.g-pop-load{position:relative;height:120px;}
+.g-pop-load img{position:absolute;left:50%;top:50%;margin:-5px 0 0 -12px;}
+.g-pop-load p{position:absolute;left:0;right:0;top:50%;margin-top:-12px;text-align:center;}
+.g-pop-close.mini{top:5px;}
+.g-pop-close:hover{ webkit-transform:rotate(180deg); -webkit-transform:rotate(180deg); transform:rotate(180deg);}
+.g-fuzzy-content{max-height:200px;overflow:hidden;position:relative;}
+.g-pop-fuzzy li{height:30px;font-size:12px;padding:0 10px; line-height:30px; position:relative; cursor:pointer; -webkit-transition:all ease-out .3s; transition:all ease-out .3s; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.g-pop-fuzzy li.current{ z-index:2;}
+.g-pop-fuzzy li:hover{ z-index:2;}
+.g-pop-fuzzy li i.tip{position:absolute;top:0;right:10px;}
+.g-pop-null{line-height:20px;font-size:12px;border:solid 1px transparent;padding:5px 10px;position:relative;z-index:10; }
+.pad-bottom-5{padding-bottom:5px;}
+.pad-clear{padding:0 !important;}
+.relative{position:relative;}
+.clear{clear:both;}
+.g-calendar-group{position:relative;font-family:Verdana,microsoft yahei !important;}
+.g-calendar-item{width:193px;position:relative;padding:3px 0 5px;float:left;}
+.g-calendar-head{height:32px;text-align:center;line-height:32px;border-bottom:solid 1px transparent; margin:0 0 10px; padding-bottom:3px; position:relative;}
+.g-calendar-head.first{margin-left:10px;}
+.g-calendar-head.last{margin-right:10px;}
+.g-calendar-head a{ font-size:14px;-webkit-transition:none;transition:none;}
+.g-calendar-head a i{font-weight:bold;font-family:Verdana,arial;font-style:normal;}
+.g-calendar-head a:hover{text-decoration:none; }
+.g-calendar-head a.disabled,.g-calendar-head a.disabled:hover{ cursor:text;}
+.g-calendar-body{position:relative;height:183px;border-left:solid 1px transparent;margin-left:-1px;overflow:hidden;}
+.g-calendar-warp{position:relative;height:300%;}
+.g-calendar-main{padding:0 10px;}
+.g-calendar-week{height:24px;line-height:24px;position:relative;margin-bottom:3px; }
+.g-calendar-week span{float:left;width:24px;display:block;text-align:center;font-size:12px;}
+.g-calendar-day{position:relative;}
+.g-calendar-overs{position:absolute;left:0px;top:0;right:0;bottom:0;font-family:Georgia;line-height:126px; text-align:center;font-size: 130px;z-index:2;font-style:italic;}
+.g-calendar-number{height:156px;position:relative;z-index:3;cursor:pointer; }
+.g-calendar-number li{float:left; width:24px; height:24px; font-size:12px; font-family:Verdana!important; text-align:center; cursor:pointer; line-height:24px;border:1px solid transparent; }
+.g-calendar-number li.now{ font-weight:bold;}
+.g-calendar-number li:hover{ border:1px solid transparent;} 
+.g-calendar-number li.disabled,.g-calendar-number li.disabled:hover{ cursor:default; font-weight:normal;}
+.g-calendar-number li.selected.disabled,.g-calendar-number li.selected.disabled:hover{ cursor:default;}
+.g-calendar-month-btn{position:absolute;width:22px;height:22px;top:8px;z-index:4;cursor:pointer;}
+.g-calendar-month-btn i{position:absolute;top:50%;left:50%;margin:-5.5px 0 0 -3px;width:6px;height:11px; }
+.g-calendar-month-btn.prev{left:10px;}
+.g-calendar-month-btn.next{right:10px;}
+.g-calendar-month-btn.prev i{background-position:0px -3px;}
+.g-calendar-month-btn.next i{background-position:-13px -3px;}
+.g-calendar-month-btn.prev:hover i{background-position:0px -21px;}
+.g-calendar-month-btn.next:hover i{background-position:-13px -21px;}
+.g-calendar-month-btn.disabled{filter:alpha(opacity=40);opacity:0.4;cursor:default;display: none;}
+.g-calendar-month-btn.prev.disabled:hover i{background-position:0px -3px;}
+.g-calendar-month-btn.next.disabled:hover i{background-position:-13px -3px;}
+.g-calendar-button{height:40px;margin:0 10px;padding:8px 0;border-top:solid 1px transparent; position:relative;z-index:10;}
+.g-calendar-button a.btn{display:block;font-size:12px;height:22px;border:solid 1px transparent; line-height:22px; padding:0px 5px;float:right;margin-left:8px;cursor:pointer; -webkit-transition:none;transition:none;}
+.g-calendar-button a.btn:hover{border:solid 1px transparent; text-decoration:none;}
+.g-calendar-time{position:absolute;left:0;top:11px;line-height:18px; }
+.g-calendar-time-item{position:relative;float:left;z-index:1;}
+.g-calendar-time-item em.number{height:20px;font-size:12px !important;text-align:center; font-weight:bold; cursor:pointer; display:block; line-height:20px; *line-height:18px; width:20px;font-size:11px; position:relative; z-index:2;}
+.g-calendar-time-separator{float:left;font-size:14px;font-weight:bold;font-size:11px;cursor:default;}
+.g-calendar-time-box{position:absolute;bottom:20px;padding-bottom:6px;cursor:pointer; z-index:1;}
+.g-calendar-time-box.hour{left:-5px;width:153px;}
+.g-calendar-time-box.minute{left:-37px;width:180px;}
+.g-calendar-time-box.second{left:-69px;width:180px;}
+.g-calendar-time-box i{ position:absolute;bottom:1px;line-height:10px;cursor:pointer;}
+.g-calendar-time-box.hour i{left:7px;}
+.g-calendar-time-box.minute i{left:38px;}
+.g-calendar-time-box.second i{left:70px;}
+.g-calendar-time-box .box{padding:3px; }
+.g-calendar-time-box .box .inner{max-height:120px;overflow:hidden;position:relative;}
+.g-calendar-time-box ul{position:relative;height:1%;overflow:hidden;}
+.g-calendar-time-box ul li{float:left; width:20px; height:20px; padding:2px; text-align:center; cursor:default; position:relative; overflow:hidden;}
+.g-calendar-time-box ul li a{font-size:11px; font-family:Verdana!important; line-height:18px;display:block; -webkit-transition:none; transition:none;}
+.g-calendar-time-box ul li a:hover{ border:1px solid transparent; text-decoration:none;} 
+.g-calendar-time-box ul li a.disabled,.g-calendar-time-box ul li a.disabled:hover{ cursor:default; } 
+.g-calendar-time-tip{position:absolute;white-space:nowrap;border-radius:3px; padding:0 5px; text-align:center;line-height:20px;*line-height:18px;height:20px;font-size:12px;}
+.g-calendar-time-tip i{ position:absolute;line-height:10px;}
+.g-calendar-time-tip.x{left:95px;top:0px;-webkit-animation:time_tip_x 1s ease-out infinite;animation:time_tip_x 1s ease-out infinite;}
+.g-calendar-time-tip.x i{left:-8px;top:4px;}
+.g-calendar-time-tip.x i.c1{display:inline;}
+.g-calendar-time-tip.y{left:-18px;top:27px;-webkit-animation:time_tip_y 1s ease-out infinite;animation:time_tip_y 1s ease-out infinite;}
+.g-calendar-time-tip.y i{left:50%;top:-6px;margin-left:-8px;}
+.g-calendar-time-tip.y i.c2{display:inline;}
+@-webkit-keyframes time_tip_x{50%{-webkit-transform:translate(-5px,0);}
+}
+@keyframes time_tip_x{50%{-webkit-transform:translate(-5px,0);transform:translate(-5px,0);}
+}
+@-webkit-keyframes time_tip_y{50%{-webkit-transform:translate(0,5px);}
+}
+@keyframes time_tip_y{50%{-webkit-transform:translate(0,5px);transform:translate(0,5px);}
+}
+.g-calendar-time-item:hover{z-index:2;}
+.g-calendar-time-item:hover .g-calendar-time-icon{display:inline;}
+.g-calendar-time-item:hover .g-calendar-time-box{-webkit-animation:hoverIn .3s ease forwards;animation:hoverIn .3s ease forwards;display:block;}
+@-webkit-keyframes hoverIn{0%{opacity:0;-webkit-transform:translate(0,10px);} 
+  	100% {opacity:1;-webkit-transform:translate(0,0);}
+}
+@keyframes hoverIn{0%{opacity:0;-webkit-transform:translate(0,10px);transform:translate(0,10px);} 
+  	100% {opacity:1;-webkit-transform:translate(0,0);transform:translate(0,0);}
+}
+@-webkit-keyframes hoverOut{0%{opacity:1;-webkit-transform:translate(0,0);} 
+  	100% {opacity:0;-webkit-transform:translate(0,10px);}
+}
+@keyframes hoverOut{0%{opacity:1;-webkit-transform:translate(0,0);transform:translate(0,0);} 
+  	100% {opacity:0;-webkit-transform:translate(0,10px);transform:translate(0,10px);}
+}
+.hide{display: none;}
+.g-calendar-fast{padding:0 10px;position:relative;height:183px;overflow:hidden;}
+.g-calendar-inner{width:183px;overflow:hidden;position:relative;z-index:1;}
+.g-calendar-panel{width:200%;position:relative;height:183px;}
+.g-calendar-panel .box{width:183px;float:left;height:183px;padding:0;border:none;background:none;}
+.g-calendar-panel .box ul{position:relative;width:183px;height:180px;padding-top:3px;}
+.g-calendar-panel .box ul li{height:43px; float:left; text-align:center; line-height:43px; width:59px; text-align:center; font-size:14px;cursor:pointer;font-family:微软雅黑,Verdana !important; position:relative; border:1px solid transparent;}
+.g-calendar-panel .box ul li:hover{ border:1px solid transparent;} 
+.g-calendar-panel .box ul li.disabled{ cursor:default; } 
+.g-calendar-fast-btn{ background-repeat:no-repeat; width:35px;height:81px; cursor:pointer; z-index:10;top:50%; margin-top:-40.5px;position:absolute;filter:alpha(opacity=50);opacity:0.5;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;}
+.g-calendar-fast-btn.prev{background-position:-72px 0;left:0;-webkit-transform:translate(-35px,0);transform:translate(-35px,0);}
+.g-calendar-fast-btn.next{background-position:0 0;right:0;-webkit-transform:translate(35px,0);transform:translate(35px,0);}
+.g-calendar-fast-btn:hover{filter:alpha(opacity=70);opacity:0.7;}
+.g-calendar-fast-btn.disabled{display:none;}
+.g-calendar-fast:hover .g-calendar-fast-btn{-webkit-transform:translate(0,0);transform:translate(0,0);}
+/*日历控件样式结束*/
+/*滚动条控件样式开始*/
+.g-scroll-dragger {position: absolute; border-radius: 10px;-webkit-transition: all 0.3s ease-out;transition: all 0.3s ease-out;cursor: pointer;z-index: 100;}
+.g-scroll-bar {position: absolute; border-radius: 10px;}
+/*滚动条控件样式结束*/
+/*弹出框公共样式*/
+.g-master-container{top:0;right:0;bottom:0;left:0; }
+.g-master-content{border:5px solid transparent;}
+/*弹出确认框控件样式*/
+.g-confirm-icon{position:absolute;left:20px;top:20px; font-size:40px;width:40px;height:40px;line-height:40px;text-align:left}
+.g-confirm-title{font-size:18px;font-weight:400; margin-bottom:15px;line-height:1.2}
+.g-confirm-content{font-size:14px; line-height:1.4}
+.g-confirm-button{height:36px;margin-top:15px}
+.g-confirm-button a{display:block; float:left; margin-right:20px; width:86px;height:34px; text-align:center;font-size:14px;line-height:34px;cursor:pointer;}
+.g-confirm-button a.white{ border:solid 1px transparent; }
+.g-confirm-button a.blue{ border:solid 1px transparent; }
+/*弹出框页面控件样式*/
+.g-master-body{position:relative;left:0;top:0; }
+.g-dialog-error{position:relative;padding:30px 0;height:290px;}
+.g-master-show{display:block;margin:0 auto 20px}
+.g-master-error p{font-size:16px;text-align:center;line-height:30px} 
+.g-master-loading{position:absolute;width:60px;padding-left:20px;height:30px;line-height:30px;margin:-15px 0 0 -40px;border-radius:30px;text-align:center;font-size:12px;left:50%;top:50%; background-repeat:no-repeat; background-position:10px center}
+/*提示框控件样式*/
+.g-master-head{position:relative;padding:0 10px;border-bottom:1px solid transparent; }
+.g-master-head .title{position:relative;overflow:hidden;height:36px; font-size:14px;line-height:36px}
+.g-master-close{position:absolute;top:8px;right:8px;z-index:100;width:20px;height:20px;cursor:pointer}
+.g-master-body{position:relative;top:0;left:0; }
+.g-status-content{padding:20px 40px; text-align:center;font-size:14px;line-height:24px}
+.g-status-submit{display:inline-block;margin:0 auto;width:88px;height:36px; text-align:center; font-size:14px; line-height:36px; cursor:pointer}
+.g-status-icon{margin-right:10px;font-size:24px;top:-4px;} 
+/*加载动画部分样式*/
+.g-waiting-content.loading{margin:-35px 0 0 -35px;width:70px;height:70px}
+.g-waiting-content{position:absolute;top:50%;left:50%;border-radius:5px}
+.g-waiting-content.loading img{position:absolute;top:50%;left:50%;margin:-25px 0 0 -25px}
+.g-waiting-content.true, .g-waiting-content.false, .g-waiting-content.tip {padding: 5px 10px;font-size: 14px;white-space: nowrap;line-height: 26px;min-height: 26px;opacity: 0;filter: alpha(opacity=0);}
+.g-waiting-content.true {-webkit-box-shadow: 1px 1px 3px #4fbf4c;box-shadow: 1px 1px 3px #4fbf4c;background: #e6fdf8;color: #4fbf4c;border: solid 1px #4fbf4c;}
+.g-waiting-content.false {-webkit-box-shadow: 1px 1px 3px #ed9ea1;box-shadow: 1px 1px 3px #ed9ea1;background: #feeeed;color: #f8756c;border: solid 1px #ed9ea1;}
+.g-waiting-content.true i, .g-waiting-content.false i, .g-waiting-content.tip i {font-size: 20px;margin-right: 5px;position: relative;top: 2px;}
+
+/* 公共分页 */
+.g-page-item{padding:25px 0px;position:relative;text-align:center;}
+.g-public-page{text-align:center; height:22px;line-height:22px;font-size:12px;position:relative;display: inline-block;*zoom: 1;*display: inline;padding-left:5px;vertical-align:middle;}
+.g-public-page a,.g-public-page span{display: inline-block;*zoom: 1;*display: inline;position:relative;z-index:1;font-family:Verdana;width:26px;padding:0 0; vertical-align:middle;height:22px;border:solid 1px transparent;  line-height:22px;text-align:center;border-radius:3px;margin:0 8px;}
+.g-public-page a.next,.g-public-page span.next{width:56px;}
+.g-public-page a.prev,.g-public-page span.prev{width:56px;}
+.g-public-page a.page-btn{font-size:12px;}
+.g-public-page .first,.g-public-page .last,.g-public-page .prev,.g-public-page .next{font-size:12px;}
+.g-public-page em.text{margin-right:10px;line-height:30px;}
+.g-public-page span.current{ cursor:default; border:solid 1px transparent;z-index:2; }
+.g-public-page span.dian{cursor:default;line-height:22px;}
+.g-public-page span.disabled{cursor:not-allowed; }
+.g-public-page .page{display: inline-block;*zoom: 1;*display: inline;vertical-align:middle;margin-left:10px;}
+.g-public-page .page input{ width:40px; position:relative; height:30px; line-height:30px; text-align:center; padding:0; margin: 0; -webkit-box-shadow:none; box-shadow:none;border:solid 1px transparent;float:left;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;}
+.g-public-page .page input:hover,.g-public-page .page input:focus{ border:solid 1px transparent;z-index:2; }
+.g-public-page .page a.btn{cursor:pointer;margin-left:10px;float:left; border-radius: 0;} 
+
+
+
+
+
+

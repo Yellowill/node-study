@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>loginTransfer…</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css" />
+    <link rel="stylesheet" href="../../base/css/base.css" />
+    <link rel="stylesheet" href="../res/css/skin.css" />
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+</head>
+<body>
+跳转中...
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>
+    require(['base','utils','status'],
+        function(){
+            M.define('loginTransfer',{
+
+                init:function(){
+                    this.getLoginData();
+
+                },
+                getLoginData: function(){
+                    var syscode = own.getHref('syscode');
+                    var originalTargetUri = own.getHref('originalTargetUri');
+                    var ticket = own.getHref('ticket');
+                    console.log(syscode,originalTargetUri,ticket);
+
+                    //https://testbao.ouyeelf.com/api/rf-basic/n/user/loginApi?syscode=
+                    var url = M.interfacePath.basic + 'n/user/loginApi?syscode='+syscode+'&originalTargetUri='+originalTargetUri+'&ticket='+ticket;
+                    // var url = M.interfacePath.basic + 'n/user/loginApi?syscode='+syscode+'&originalTargetUri='+originalTargetUri+'&ticket='+ticket;
+                    //console.log(url);
+                        M.ajaxFn({
+                            url: url,
+                            type:'get',
+                            dataType:'json',
+                            beforeSend: function(XMLHttpRequest) {
+                                
+                                
+
+                            },
+                            success:function(data){
+                            	 //debugger;
+                                //console.log(data);
+                                if (!data.success) {
+                                    if(data.code == 'MELG010') {
+                                        return M.ui.status.init({
+                                            position: 'fixed',
+                                            html: data.message+'<a class="g-block g-text-center" href="'+ $.interfacePath.capUrl+'company/queryCompanyCenter' +'">点击此处去补充信息<a/>',
+                                            callback: function() {
+                                                window.location.href = $.interfacePath.capUrl+'company/queryCompanyCenter'
+                                            },
+                                            close: function () {
+                                                own.logout();
+                                            }
+                                        });
+                                    }else if (data.code == 'MELG011') {
+                                        return M.ui.status.init({
+                                            position: 'fixed',
+                                            html: data.message+'<a class="g-block g-text-center" href="'+ $.interfacePath.capUrl+'company/queryCompanyCenter' +'">点击此处去补充信息<a/>',
+                                            callback: function() {
+                                                window.location.href = $.interfacePath.capUrl+'company/queryCompanyCenter'
+                                            },
+                                            close: function () {
+                                                own.logout();
+                                            }
+                                        });
+                                    }else if (data.code == 'MELG012') {
+                                        return M.ui.status.init({
+                                            position: 'fixed',
+                                            html: data.message+'<a class="g-block g-text-center" href="'+ $.interfacePath.capUrl+'company/queryCompanyCenter' +'">点击此处去补充信息<a/>',
+                                            callback: function() {
+                                                window.location.href = $.interfacePath.capUrl+'company/queryCompanyCenter'
+                                            },
+                                            close: function () {
+                                                own.logout();
+                                            }
+                                        });
+                                    }else if (data.code == 'MELG013') {
+                                        return M.ui.status.init({
+                                            position: 'fixed',
+                                            html: data.message+'<a class="g-block g-text-center" href="'+ $.interfacePath.capUrl+'company/queryCompanyCenter' +'">点击此处去补充信息<a/>',
+                                            callback: function() {
+                                                window.location.href = $.interfacePath.capUrl+'company/queryCompanyCenter'
+                                            },
+                                            close: function () {
+                                                own.logout();
+                                            }
+                                        });
+                                    }else if (data.code == 'MELG014') {
+                                        return M.ui.status.init({
+                                            position: 'fixed',
+                                            html: data.message+'<a class="g-block g-text-center" href="'+ $.interfacePath.capUrl+'company/queryCompanyCenter' +'">点击此处去补充信息<a/>',
+                                            callback: function() {
+                                                window.location.href = $.interfacePath.capUrl+'company/queryCompanyCenter'
+                                            },
+                                            close: function () {
+                                                own.logout();
+                                            }
+                                        });
+                                    }else {
+                                        M.ui.waiting.creat({
+                                            status:false,
+                                            time:3000,
+                                            text:data.message,
+                                            hide:false,
+                                            callback: function () {
+                                                own.logout();
+                                            }
+                                        });
+                                    }
+                                    return;
+                                }
+                                if (data.success) {   // 登入成功
+                                    // 设置 token 数据
+                                    var userInfo = {};
+                                    userInfo["login"] = true;
+                                    userInfo["userName"] = data.data.user.operateName;
+                                    userInfo["userId"] = data.data.user.operateId;
+                                    userInfo["comId"] = data.data.user.customerId;
+                                    userInfo["comName"] = data.data.user.customerName;
+                                    userInfo["token"] = data.data.token;
+                                    userInfo["userRole"] = data.data.user.userRole;
+                                    userInfo["taxNum"] = data.data.user.taxNum;
+                                    userInfo["caDriverType"] = data.data.user.caDriverType;
+                                    userInfo["caAgreementFlag"] = data.data.user.caAgreementFlag;
+                                    userInfo["sginFlag"] = data.data.user.sginFlag;
+                                    userInfo["cus_caAgreementFlag"] = data.data.user.cus_caAgreementFlag;
+                                    userInfo["caFlag"] = data.data.user.caFlag;
+                                    userInfo["legalEntityName"] = data.data.user.legalEntityName;
+                                    userInfo["legalEntityCode"] = data.data.user.legalEntityCode;
+                                    var userRole = userInfo.userRole;
+                                    //存token
+                                    own.save('userInfo', userInfo);
+                                   // document.cookie="login"+"="+"true";
+                                    M.cookie.setCookie('login',true);
+                                    if(userRole[0] == "R55"){
+                                        return window.location.href= M.interfacePath.server+ "privilege/index.html#/platform/user-platform";
+                                    }
+                                    // debugger;
+                                    if (userInfo.caFlag === '0') {
+                                        M.ajaxFn({
+                                            url: $.interfacePath.basic + 'certificateIssue',
+                                            type: 'post',
+                                            data: {
+                                                userId: userInfo.userId
+                                            },
+                                            dataType: 'json',
+                                            success: function (res) {
+                                                if(res.success) {
+                                                    userInfo.caFlag = '1';
+                                                    own.save('userInfo', userInfo);
+                                                    if (userInfo.sginFlag === '0') {
+                                                        window.location.href="sginAgreement.html";
+                                                        return;
+                                                    }
+                                                    if (userInfo.caAgreementFlag === '0') {
+                                                        window.location.href="userAgreement.html";
+                                                        return;
+                                                    }
+                                                    //判断是否单点登录缓存连接
+                                                    if ( own.fetch('targetUrl') && typeof own.fetch('targetUrl') !== 'object') {
+                                                        var url = own.fetch('targetUrl');
+                                                        own.removeKey('targetUrl');
+                                                        return window.location.href = url;
+                                                    }
+                                                    if(userRole[0] == "R10"){
+                                                        window.location.href="../basic/workbench.html";
+                                                    }else{
+                                                        window.location.href="../basic/workbench-supplier.html";
+                                                    }
+                                                }else {
+                                                    M.ui.waiting.creat({
+                                                        status:false,
+                                                        time:3000,
+                                                        text:res.message,
+                                                        hide:false,
+                                                        callback: function () {
+                                                            own.logout();
+                                                        }
+                                                    });
+                                                }
+                                            },
+                                            error: function (err) {
+                                                M.ui.waiting.creat({
+                                                    status:false,
+                                                    time:3000,
+                                                    text:res.message,
+                                                    hide:false,
+                                                });
+                                            }
+                                        });
+                                    }else if (userInfo.caFlag === '1') {
+                                    	//console.log("loginTransfer own.fetch('targetUrl') :"+own.fetch('targetUrl'));
+                                        
+                                         if (userInfo.sginFlag === '0') {
+                                             window.location.href="sginAgreement.html";
+                                             return;
+                                         }
+                                    	if (userInfo.caAgreementFlag === '0') {
+                                            window.location.href="userAgreement.html";
+                                            return;
+                                        }
+                                        //判断是否单点登录缓存连接
+                                        if ( own.fetch('targetUrl') && typeof own.fetch('targetUrl') !== 'object') {
+                                            var url = own.fetch('targetUrl');
+                                            own.removeKey('targetUrl');
+
+                                            //console.log("loginTransfer url :"+url);
+                                            return window.location.href = url;
+                                        }
+                                        if(userRole[0] == "R10"){
+                                            window.location.href="../basic/workbench.html";
+                                        }else{
+                                            window.location.href="../basic/workbench-supplier.html";
+                                        }
+                                    }
+
+                                }
+                            },
+                            error:function(err){
+                                console.log(err);
+                            }
+                        });
+
+                }
+            })(function(){
+                M.loginTransfer.init();
+            });
+        }
+    )
+
+</script>
+</html>

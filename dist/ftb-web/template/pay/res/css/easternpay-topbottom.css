@@ -1,0 +1,27 @@
+html, body{ background: #fff;}
+.ui-eastenpay-head{ position: relative; margin: 0 auto; z-index: 9999;}
+.ui-eastenpay-navbar{ height: 30px; background: #000; position: relative; z-index: 9999;}
+.ui-eastenpay-navbar-main{ max-width: 1200px; min-width: 700px;margin: 0 auto; font-size: 14px;}
+.ui-eastenpay-navbar-left, .ui-eastenpay-navbar-left li{ float: left; }
+.ui-eastenpay-navbar-left a{ color: #fff; float: left; line-height: 30px;}
+.ui-eastenpay-navbar-left a i{ font-size: 14px; color: #b40000; vertical-align: middle; margin-right: 5px;}
+.ui-eastenpay-navbar-left li .line{ line-height: 30px; color: #fff;}
+.ui-eastenpay-navbar-right{ float: right;}
+.ui-eastenpay-navbar-right li{ float: left; padding: 0 20px;}
+.ui-eastenpay-navbar-right li, .ui-eastenpay-navbar-right li a{ color: #fff; line-height: 30px; display: block;}
+.ui-eastenpay-navbar-right li i{ font-size: 14px; color: #b40000; vertical-align: middle; margin-right: 5px;}
+.ui-eastenpay-navbar-right .ui-navbar-dropdown{ position: relative;}
+.ui-eastenpay-navbar-right .ui-navbar-dropdown-box{ width: 110px; position: absolute; top: 100%; left: 50%; margin-left: -55px; background: #000; border-top: 2px solid #b40000; margin-top: -1px; z-index: 999; display: none;}
+.ui-eastenpay-navbar-right .ui-navbar-dropdown-box li{ float: none; display: block; text-align: center;}
+.ui-navbar-dropdown-box li:hover{ background: #b40000;}
+.ui-eastenpay-navbar-right  .ui-navbar-dropdown:hover .ui-navbar-dropdown-box{ display: block;} 
+.ui-eastenpay-menu{ position: relative; min-height: 80px; border-bottom: 1px solid #f1f1f1;}
+.ui-eastenpay-menu-main{ max-width: 1200px; min-width: 700px;margin: 0 auto; }
+.ui-eastenpay-logo{ float: left; padding: 20px 0; position: relative;}
+.ui-eastenpay-logo .ui-logo-img{ height: 40px; display: inline-block;}
+.ui-eastenpay-logo .text{ display: inline-block; font-size: 15px; color: #b40000; font-weight: bold; margin-left: 10px; line-height: 1.2; border-left: 1px solid #333; padding-left: 10px; position: relative; top: 9px; }
+
+
+
+
+

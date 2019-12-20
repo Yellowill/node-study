@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>通宝兑付详情</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css" />
+    <link rel="stylesheet" href="../../base/css/base.css" />
+    <link rel="stylesheet" href="../../base/css/module.css" />
+    <link rel="stylesheet" href="../res/css/skin.css" />
+    <link rel="stylesheet" href="../res/css/data-page.css" />
+</head>
+<body class="g-navbar-fixed">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="g-page-main-detail">
+        <div class="g-container container-title-border">
+            <div class="g-row">
+                <div class="g-tabs">
+                    <div class="g-pagetop-tab">
+                        <ul>
+                            <li class="mar-right-20"><a href="javascript:;" class="active">通宝兑付详情</a></li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                    <div class="g-tab-content">
+                        <div class="g-tab-main active">
+                            <div class="g-small-head-title mar-top-10">基本详情</div>
+                            <div class="mar-top-10 g-new-table">
+                                <div class="g-list-content">
+                                    <div class="g-left tit">通宝编号</div>
+                                    <div class="g-left con honour-no"></div>
+                                    <div class="g-left tit">金额</div>
+                                    <div class="g-left con border-right honour-amount"></div>
+                                </div>
+                                <div class="g-list-content">
+                                    <div class="g-left tit">兑付日期</div>
+                                    <div class="g-left con border-bottom honour-date"></div>
+                                    <div class="g-left tit">接收方</div>
+                                    <div class="g-left con border-right border-bottom honour-rec"></div>
+                                </div>
+                            </div>
+                            <div class="g-small-head-title mar-top-10">持有人详情</div>
+                            <div class="g-main-content">
+                                <table class="g-table-detail">
+                                    <thead>
+                                    <tr>
+                                        <th>持有人名称</th>
+                                        <th>持有金额</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="honour-main-content">
+                                    </tbody>
+                                </table>
+                                <div class="g-table-bottom g-table-detail">
+                                    <div class="g-right">
+                                        <div id="page"></div>
+                                        <div class="mar-left-5 page-content">共<span class="pageTotal"></span>条记录 共<span class="pageCount"></span>页</div>
+                                    </div>
+                                    <div class="g-clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="print-wrap" class="col-xs-12 mar-bottom-20 mar-top-20 g-text-center">
+                        <button class="ui-button ui-btn-lg ui-btn-gray mar-right-20 addWidth" onclick="javascript:window.close();">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/honourDetail.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

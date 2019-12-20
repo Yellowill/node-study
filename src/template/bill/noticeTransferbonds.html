@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>债权转出通知</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css"/>
+    <link rel="stylesheet" href="../../base/css/base.css"/>
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+    <link rel="stylesheet" href="../res/css/skin.css"/>
+    <link rel="stylesheet" href="../res/css/data-page.css"/>
+</head>
+<body class="g-navbar-fixed">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container noticeTransferbonds">
+    <div class="ui-menu ui-menu-bg"></div>
+    <div class="g-page-main page-demo">
+        <div class="g-container">
+            <div class="g-pagetop-tab">
+                <ul>
+                    <li class="mar-right-20"><a href="javascript:;" class="active">债权转出通知</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="g-container">
+            <div class="g-row g-search ">
+                <div class="g-left g-in-search">
+                    <div class="g-form-group">
+                        <label class="g-left col40">开立方：</label>
+                        <div class="g-left">
+                            <input type="text" id="transferorCompanyName" name="transferorCompanyName" class="">
+                        </div>
+                    </div>
+                </div>
+                <div class="g-left g-in-search">
+                    <div class="g-form-group">
+                        <label class="g-left col40">受让方：</label>
+                        <div class="g-left">
+                            <input type="text" id="transfereeCompanyName" name="transfereeCompanyName" class="">
+                        </div>
+                    </div>
+                </div>
+                <div class="g-left g-in-search">
+                    <div class="g-form-group">
+                        <label class="g-left col40">通宝号：</label>
+                        <div class="g-left">
+                            <input type="text" id="billNo" name="billNo" class="">
+                        </div>
+                    </div>
+                </div>
+                <div class="g-right g-in-search">
+                    <div class="g-form-group">
+                        <a href="javascript:;" class="ui-button ui-search-button ui-btn-primary g-right">查询</a>
+                    </div>
+                </div>
+            </div>
+            <div class="g-main-content">
+                <table class="g-table">
+                    <thead>
+                    <tr>
+                        <th width="15%">通宝编号</th>
+                        <th width="20%">开立方</th>
+                        <th width="20%">受让方</th>
+                        <th width="15%">转让金额</th>
+                        <th width="15%">转让时间</th>
+                        <th width="15%">详情</th>
+                    </tr>
+                    </thead>
+                    <tbody class="notice-tbody-content">
+                    <!--表格加载位置-->
+                    </tbody>
+                </table>
+                <div class="g-table-bottom">
+                    <div class="g-right">
+                        <div id="page"></div>
+                        <div class="mar-left-5 page-content">
+                            共<span class="pageTotal"></span>条记录 共<span class="pageCount"></span>页
+                        </div>
+                    </div>
+                    <div class="g-clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/noticeTransferbonds.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

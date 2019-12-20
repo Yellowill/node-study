@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>通宝兑付列表</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css"/>
+    <link rel="stylesheet" href="../../base/css/base.css"/>
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+    <link rel="stylesheet" href="../res/css/skin.css"/>
+    <link rel="stylesheet" href="../res/css/data-page.css"/>
+</head>
+<body class="g-navbar-fixed">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="ui-menu ui-menu-bg"></div>
+    <div class="g-page-main page-demo">
+        <div class="g-nav">
+            <div class="g-nav-title col-xs-6 g-font20">通宝兑付列表</div>
+        </div>
+        <div class="g-nav-notice col-xs-12 mar-bottom-15">
+            <div class="nav-notice">
+                <span>业务提醒：</span>请于兑付日期前打款至东方付通备付金收款账户，东方付通将于收到款项后两个工作日内完成资金结算。东方付通备付金收款账户信息<br>
+                详见：<a href="https://www.easternpay.com.cn/dfft/zhcz.html" target="_blank">https://www.easternpay.com.cn/dfft/zhcz.html</a>
+            </div>
+        </div>
+        <div class="g-container">
+            <div class="g-row">
+                <div class="g-tabs">
+                    <ul class="g-nav-tabs">
+                        <li class="g-nav-tabs-li active all"><a href="javascript:;">全部<span></span></a></li>
+                        <li class="g-nav-tabs-li not"><a href="javascript:;">待兑付<span></span></a></li>
+                        <li class="g-nav-tabs-li ready"><a href="javascript:;">已兑付</a></li>
+                        <div class="g-right tabs-right"><span class="totalAmountName">总兑付金额：</span><span class="maincol totalAmount">0</span>元</div>
+                    </ul>
+                    <div class="g-tab-content">
+                        <div class="g-row g-search">
+                            <div class="g-left">
+                                <ul class="clearBoth in-tabs">
+                                    <li class="g-left date-all"><a class="active" href="javascript:;">全部</a></li>
+                                    <li class="g-left date-month"><a href="javascript:;">近一个月</a></li>
+                                    <li class="g-left date-three"><a href="javascript:;">近三个月</a></li>
+                                    <li class="g-left date-half"><a href="javascript:;">近一年</a></li>
+                                </ul>
+                            </div>
+                            <div class="g-left">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">兑付日期：</label>
+                                    <div class="g-left">
+                                            <span class="g-input-icon-right g-left">
+                                                <input type="text" class="date" readonly="readonly" id="js-calender-start" placeholder="">
+                                                <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                        <span class="g-input-line col60">—</span>
+                                        <span class=" g-input-icon-right g-left">
+                                                <input type="text" placeholder=" " readonly="readonly" value="" class="date"
+                                                       id="js-calender-stop">
+                                                <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-left: 5px;" class="g-left">
+                                <input type="text" style="width:170px;" placeholder="接收方公司名称" class="pdright28 institution">
+                                <i class="iconfont g-input-icon">&#xe74e;</i>
+                                <a href="javascript:;"
+                                   class="ui-button ui-search-button ui-btn-primary g-right">查询</a>
+                            </div>
+                            <div style="margin-top: 10px;" class="g-right">
+                                <a href="javascript:;" id="opens"
+                                   class="g-right">更多>></a>
+                            </div>
+                        </div>
+                        <div id="othersc" style="display: none;" class="g-row g-search">
+                            <div class="g-left g-in-search">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">通宝编号：</label>
+                                    <div class="g-left">
+                                        <input type="text" placeholder="通宝编号" class="pdright28 tbNum">
+                                        <i class="iconfont g-input-icon">&#xe74e;</i>
+                                        <!--                                        <a href="javascript:;"-->
+                                        <!--                                           class="ui-button ui-search-button ui-btn-primary g-right">查询</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-tab-main active">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="15%">通宝编号</th>
+                                        <th width="25%">收款方</th>
+                                        <th width="15%">兑付金额</th>
+                                        <th width="15%">兑付日期</th>
+                                        <th width="15%">状态</th>
+                                        <th width="15%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="billIssue-main-content">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="15%">通宝编号</th>
+                                        <th width="25%">收款方</th>
+                                        <th width="15%">兑付金额</th>
+                                        <th width="15%">兑付日期</th>
+                                        <th width="15%">状态</th>
+                                        <th width="15%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="billIssue-main-content">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="15%">通宝编号</th>
+                                        <th width="25%">收款方</th>
+                                        <th width="15%">兑付金额</th>
+                                        <th width="15%">兑付日期</th>
+                                        <th width="15%">状态</th>
+                                        <th width="15%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="billIssue-main-content">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-table-bottom">
+                            <div class="g-right">
+                                <div id="page"></div>
+                                <div class="mar-left-5 page-content">共<span class="pageTotal"></span>条记录 共<span class="pageCount"></span>页</div>
+                                </div>
+                            </div>
+                            <div class="g-clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/billHonour.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

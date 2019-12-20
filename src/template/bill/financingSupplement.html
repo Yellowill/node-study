@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>通宝融资</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css" />
+    <link rel="stylesheet" href="../../base/css/base.css" />
+    <link rel="stylesheet" href="../../base/css/module.css" />
+    <link rel="stylesheet" href="../res/css/skin.css" />
+    <link rel="stylesheet" href="../res/css/data-page.css" />
+</head>
+<body class="g-navbar-fixed financingSupplement">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="ui-menu"></div>
+    <div class="g-page-main page-demo financingSupplement">
+        <div class="g-nav">
+            <i class="iconfont">&#xe601;</i><span class="g-nav-title g-font18">贸易背景信息补充</span>
+        </div>
+        <div class="g-container">
+            <div class="ui-confirm-content">
+                <div class="ui-confirm-main">
+                    <div class="ui-confirm-needitem" style="position:relative;">
+                        <div class="ui-confirm-main-needtitle">基本信息</div>
+                        <div class="mybox">
+                            <div  class="ui-confirm-form g-left mar-top-5" style="margin-left: 125px;width: 370px;">
+                                <label class="name ">通宝来源：</label>
+                                <div>
+                                    <input disabled readonly name="" class="js-source " type="" value="" />
+                                </div>
+                            </div>
+                            <div class="ui-confirm-form g-left mar-top-5" style="margin-left: 165px;width: 370px;">
+                                <label class="name ">交易单据号：</label>
+                                <div>
+                                    <input disabled readonly name="" class="js-jynum"  type="" value="" />
+                                </div>
+                            </div>
+                            <div class="ui-confirm-form g-left mar-top-5" style="margin-left: 125px;width: 370px;">
+                                <label class="name ">交易对象：</label>
+                                <div>
+                                    <input disabled readonly name="" class="js-jyobject " type="" value="" />
+                                </div>
+                            </div>
+                            <div class="ui-confirm-form g-left mar-top-5" style="margin-left: 165px;width: 370px;">
+                                <label class="name ">交易金额：</label>
+                                <div>
+                                    <input disabled readonly name="" class="js-jymoney" type="" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-confirm-main-needtitle" style="margin-top:20px;">贸易背景信息</div>
+                        <div class="mybox" style="padding-left: 105px;height:63px;">
+                            <div class="ui-confirm-form g-left mar-top-5" style="width: 520px;">
+                                <label class="name ">贸易合同编号：<em class="need-contract">*</em></label>
+                                <div class="ui-confirm-group">
+                                    <input name="" class="js-verification js-fp-address" str="贸易合同编号" type="" value="" />
+                                </div>
+                            </div>
+                            <div class="ui-confirm-form g-left mar-top-5" style="width: 480px;margin-left: 15px;">
+                                <label class="name">贸易合同名称：<em class="need-contract">*</em></label>
+                                <div class="ui-confirm-group">
+                                    <input name="" class="js-verification js-fp-phone" str="贸易合同名称" type="" value="" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div class="bg-info clearBoth">-->
+                            <!--<div class="info-title required">贸易背景描述：</div>-->
+                            <!--<div class="info-con relative">-->
+                                <!--<div style="position: relative;">-->
+                                    <!--<textarea autocomplete="off" class="description" name="description" id="mark" maxlength="100" cols="" rows=""></textarea>-->
+                                    <!--<p class='js-warning-text' style="position: absolute;top: 10px;left: 10px;line-height: 18px; color:#999;">请输入本次开立所对应的贸易背景描述。<br>建议描述方式：【合同签约甲方名称】与【合同签约乙方名称】签订的【合同名称】以及【贸易商品或服务名称】</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="ui-confirm-form mar-top-5" style="padding-left: 105px;height:100px;">
+                            <label class="name">贸易背景描述：<em class="need-contract">*</em></label>
+                            <div class="info-con relative">
+                                <div style="position: relative;">
+                                    <textarea  autocomplete="off" class="description" name="description" id="mark" maxlength="100" cols="" rows=""></textarea>
+                                    <p class='js-warning-text' style="position: absolute;top: 10px;left: 10px;line-height: 18px; color:#999;">请输入本次开立所对应的贸易背景描述。<br>建议描述方式：【合同签约甲方名称】与【合同签约乙方名称】签订的【合同名称】以及【贸易商品或服务名称】</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-confirm-form mar-top-5" style="padding-left: 105px;height:114px;">
+                            <label class="name">附件：<em class="need-contract">*</em></label>
+                            <div class="ui-confirm-group">
+                                <div class="upload-wrap relative" ><i class="iconfont upload">&#xe60b;</i><a href="javascript:;" id="browse1">添加附件</a><i class="iconfont arrow">&#xe72e;</i><span class="mar-left-15 file" style="font-size:12px;color:#c0c0c0;">请上传贸易合同附件</span></div>
+                                <div class="clearBoth upload-info" id="uploadBox"></div>
+                                <p class="error-tips mar-top-10"></p>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <!--<form id="uploadFileId"  name="uploadFileId" >-->
+                            <!--<div class="ui-confirm-annexes" style="position:relative">-->
+                                <!--<div class="upload-wrap required-before relative" ><i class="iconfont upload">&#xe60b;</i><a href="javascript:;" id="browse">添加附件</a><i class="iconfont arrow">&#xe72e;</i><label class="mar-left-25" style="font-size:12px;color:#c0c0c0;">请上传贸易合同及相应的发票附件</label></div>-->
+                                <!--<div class="clearBoth upload-info" id="uploadBox"></div>-->
+                                <!--<p class="error-tips mar-top-10"></p>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    </div>
+                    <div class="ui-confirm-line mar-top-20"></div>
+                </div>
+                <div class="transfer-content">
+                    <div class="hr"></div>
+                    <div class="list-info">
+                        发票信息
+                        <a href="JavaScript:;" class="addInvoice" style="display: none;">补充发票</a>
+                        <span class="check-invoice" style="display: none;">存在未验证通过的发票，点击<a href="JavaScript:;" class="tocheck-invoice">发票验证</a></span>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="con-wrap">
+                        <div  class="table-con">
+                            <div class="table">
+                                <div class="table-th">
+                                    <div class="invoice-code">发票代码</div>
+                                    <div class="invoice-num">发票号码</div>
+                                    <div class="invoice-date">开票日期</div>
+                                    <div class="invoice-rate">发票税率</div>
+                                    <div class="invoice-num">验票通过</div>
+                                    <div class="invoice-money">本次使用金额</div>
+                                    <div class="invoice-buy">购买方/销售方</div>
+                                    <div class="enclosure">操作</div>
+                                </div>
+                                <div id="scroll-bar" class="table-tr">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="g-text-left mar-top-20 mar-bottom-20 js-money-container" style="margin-left:20px; display: none">
+                    <p style="font-size: 14px;font-weight: bold;">总金额：<span class="js-totalmoney"></span></p>
+                </div>
+                <div class="g-text-center mar-top-20 mar-bottom-20">
+                    <a href="JavaScript:;" class="prev  mar-top-20">取消</a>
+                    <a href="JavaScript:;" class="next mar-left-20 mar-top-20">确定</a>
+                </div>
+                <div style="width:100%; height:100px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script type="text/javascript" src="../res/js/bill/financingSupplement.js"></script>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>通宝受让</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css" />
+    <link rel="stylesheet" href="../../base/css/base.css" />
+    <link rel="stylesheet" href="../../base/css/module.css" />
+    <link rel="stylesheet" href="../res/css/skin.css" />
+    <link rel="stylesheet" href="../res/css/data-page.css" />
+    <style type="text/css">
+        .ui-examinebottmo-left{ float:left;}
+        .ui-examinebottmo-right{ float:right;}
+        .ui-examinebottmo-check{ line-height:40px;}
+        .ui-examinebottmo-check .checkbox{vertical-align: middle; text-align:center; display:inline-block; width:23px; height:23px; line-height:21px; border-radius:50%; border: 1px solid #aaa; background:#fff; overflow:hidden;}
+        .ui-examinebottmo-check .checkbox i{ font-size:14px; line-height:23px; visibility: hidden;}
+        .ui-examinebottmo-check .checkbox:hover{ background:#dadada;}
+        .ui-examinebottmo-check .checkbox:hover i{ color:#fff; visibility: visible; }
+        .ui-examinebottmo-check .checkbox.act{ visibility: visible; background: #ea544a; border-color:#ea544a;}
+        .ui-examinebottmo-check .checkbox.act i{ color:#fff; visibility: visible; }
+        .ui-examinebottmo-check .text{ vertical-align: middle; margin-left:5px; font-size:14px;}
+        .ui-examinebottmo-right .next-step{ margin:0; font-size:14px;}
+        .g-top-content .ui-examinebottmo-check{margin-right: 5px; line-height: 1;display:inline-block; *display: inline; *zoom: 1;}
+    </style>
+</head>
+<body class="g-navbar-fixed">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="ui-menu ui-menu-bg"></div>
+    <div class="g-page-main page-demo">
+        <div class="g-nav">
+            <div class="g-nav-title col-xs-6 g-font20">受让列表</div>
+            <div class="col-xs-6 g-text-right g-nav-content">
+                <!--<a id="quickAccept" href="javascript:;" class="ui-button-ghost g-nav-btn ui-btn-red none" style="display: inline-block;"><i-->
+                        <!--class="iconfont mar-right-5">&#xe6fa;</i>一键受让</a>-->
+            </div>
+        </div>
+        <div class="g-container">
+            <div class="g-row">
+                <div class="g-tabs">
+                    <ul class="g-nav-tabs">
+                        <li class="g-nav-tabs-li"><a class="all" href="javascript:;">全部<span></span></a></li>
+                        <li class="g-nav-tabs-li"><a class="wait" href="javascript:;">待签收<span></span></a></li>
+                        <li class="g-nav-tabs-li"><a class="ready" href="javascript:;">已签收<span></span></a></li>
+                        <li class="g-nav-tabs-li"><a class="reject" href="javascript:;">驳回</a></li>
+                        <div class="g-right tabs-right sort-group">
+                            <span class="date-sort sort g-inline-block">按转让日期<i class="iconfont g-font12 g-inline-block">&#xe61e;</i></span>
+                        </div>
+                    </ul>
+                    <div class="g-tab-content">
+                        <div class="g-row g-search">
+                            <div class="g-left g-in-search">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">转让日期：</label>
+                                    <div class="g-left">
+                                        <span class="g-input-icon-right g-left">
+                                            <input type="text" class="date" readonly="readonly" id="js-calender-start" placeholder="">
+                                            <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                        </span>
+                                        <span class="g-input-line col60">—</span>
+                                        <span class=" g-input-icon-right g-left">
+                                            <input type="text" placeholder="" readonly="readonly" value="" class="date" id="js-calender-stop">
+                                            <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-left g-in-search">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">转出方：</label>
+                                    <div class="g-left">
+                                        <input type="text" class="pdright28">
+                                        <i class="iconfont g-input-icon">&#xe74e;</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-left g-in-search">
+                                <a href="javascript:;" class="ui-button ui-search-button ui-btn-primary g-right">查询</a>
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content">
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content content-wait Js-check-pending">
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content content-ready">
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <div class="g-main-content content-reject">
+                            </div>
+                        </div>
+                        <div class="g-table-bottom">
+                            <div class="g-right">
+                                <div id="page"></div>
+                                <div class="mar-left-5 page-content">共<span class="pageTotal"></span>条记录 共<span class="pageCount"></span>页</div>
+                            </div>
+                            <div class="g-clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="transfer-footer transfer-footer-fixed js-all-approve" style=" width:980px; border-top:1px solid #eee; height: 80px; padding: 22px 10px 0 28px; background: #fff;  box-shadow: 0 0 20px #e5e5e5;  margin-bottom: 0; margin-left: -10px;display:none">
+            <div class="ui-examinebottmo-left">
+                <div class="ui-examinebottmo-check">
+                    <span class="checkbox" id="checkall"><i class="iconfont">&#xe74c;</i> </span>
+                    <span class="text">全选</span>
+                </div>
+            </div>
+            <div class="ui-examinebottmo-right addBill Js-Allcheck-Btn">
+                <a href="javascript:;" class="next-step">批量受让</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/assigneeBill.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>欧冶-通宝</title>
+    <link rel="stylesheet" href="../../base/css/base.css" />
+    <link rel="stylesheet" href="../../base/css/module.css" />
+    <link rel="stylesheet" href="../res/css/skin.css" />
+    <link rel="stylesheet" href="../res/css/data-page.css" />
+    <link rel="stylesheet" href="../res/css/iconfont.css" />
+    <script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+<div class="g-page-container">
+    <div class="g-page-head">
+        <a href="javascript:;" class="g-page-logo">
+            <img src="../../base/images/logo-rz.png"><span>通宝</span>
+            <span class="welcomeTitle" style="color:#219FFE;font-size:20px;">|</span>
+            <span class="welcomeTitle-login" style="color:#219FFE; font-size: 14px; margin-left: 8px;">欢迎登录</span>
+        </a>
+        <div class="right registerBomb">
+            <span>还没有账号？</span>
+            <a id="capRegUrl" href="" class="ui-button-ghost ui-btn-blue">立即注册</a>
+        </div>
+        <div class="g-clear"></div>
+    </div>
+    <div class="g-content">
+        <div class="login_wrap login_new" style="background-color: #219FFE">
+            <div class="login_mode">
+                <div class="login_bgImg">
+                    <img src="http://cdn-ng.shgt.com/statics/S3?fileName=1.png&amp;path=public_ad_adImage/cms/20180205001.png">
+                </div>
+                <div class="login_frame unite_login">
+                    <div class="tab_change">
+                        <label class="current">账户登录</label>
+                    </div>
+                    <!-- 用户名登录 -->
+                    <div class="infor " style="display: block;">
+                        <form id="fm3" name="fm3" action="" method="post">
+                            <dl>
+                                <dt>
+                                    <i class="icon iconfont icon-ren111"></i>
+                                    <label for=""></label>
+                                    <input id="usertype" name="usertype" type="hidden" value="COMPANY"/>
+                                    <input id="action" name="action" type="hidden" value="submit"/>
+                                    <input type="hidden" value="" name="remoteLoginPage" id="remoteLoginPage" />
+                                    <input id="usernameU" name="username" class="required mobile_code" tabindex="1"  placeholder="用户名/手机号码" accesskey="n" type="text" value="" size="25" autocomplete="off">
+                                    <i class="icon iconfont icon-error-fill" style="margin-top: 7px; left: 294px; display: inline;" id="mobileUsercode"></i>
+                                    <p id="errorUsernameMsg" class="reg_mind" style="">请输入用户名或手机号。</p>
+                                </dt>
+                                <dt>
+                                    <i class="icon iconfont icon-iconset0114"></i>
+                                    <label for=""></label>
+                                    <input id="password" name="password" class="required mobile_code" tabindex="2" placeholder="密码"  type="password" value="" size="25" autocomplete="off">
+                                    <i class="icon iconfont icon-error-fill" style="margin-top: 7px; left: 294px; display: inline;" id="mobileUserpassword"></i>
+                                    <p id="errorPasswordMsg" class="reg_mind" style="">请输入密码。</p>
+                                    <span id="capslock-on" style="display: none;">
+                                        <p>
+                                            <img src="../res/images/login/warning.png" valign="top">
+                                        </p>
+                                    </span>
+                                </dt>
+
+                                <!--<dt id="FormU">-->
+                                    <!--<div class="union_code">-->
+                                        <!--<img id="captchaImgU" alt="验证码" src="res/images/login/captcha.jpg" width="100" height="40"  style="display: inline;">-->
+                                    <!--</div>-->
+                                    <!--<input type="text" placeholder="图形验证" maxlength="4" tabindex="3" id="" class="code" name="validateCode" autocomplete="off">-->
+                                    <!--<i class="icon iconfont icon-error-fill" style="margin-top: 7px; left: 190px; display: inline;" id="userUnionCode"></i>-->
+                                    <!--<p  class="reg_mind" style="">验证码不正确。</p>-->
+                                    <!--<p class="code_change">看不清楚?<a href="javascript:;" onclick="changeCodeU()">换张图片</a></p>-->
+                                <!--</dt>-->
+                            </dl>
+                            <div class="zc_Three">
+                                <div class="zc_three g-left">
+                                    <i class="iconfont zc_twoia fl"></i>
+                                    <input type="text" id="verification" name="_captcha_parameter" class="zc_two_texts fl" value="验证码" onfocus="if(this.value=='验证码'){this.value='';}" onblur="if(this.value.length==0){this.value='验证码';}else{this.style.color='#000'}">
+                                    <a href="javacript:;" class="setnull"><i class="iconfont zc_twoib fl "></i></a>
+                                </div>
+                                <div class="g-right" id="span_ccode">
+                                    <a href="javascript:;">
+                                        <img id="captcha" title="看不清,换一张" src="" height="38px" width="90px" />
+                                    </a>
+                                </div>
+                            </div>
+                            <!--<input type="button" value="登录" class="btn_union" id="btn_login">-->
+                            <button id="land" class="btn_union" onclick="javascript:document.forms[0].submit();">登录</button>
+                            <div class="mar-top-10 a_blue">
+                                <a href="javascript:;">忘记密码</a>
+                                <a href="http://uat.shgt.com/account-ng/rc/ex/register?applicationId=1531368089676" class="g-right">免费注册</a>
+                            </div>
+                        </form>
+                    </div><!--用户名登陆-->
+                </div>
+            </div><!--登陆框-->
+
+        </div>
+    </div>
+    <div id="registerBox" class="footer   mar-bottom-20  mar-top-20" style="display: block;">
+        <div class="w1190 margin0 clearfix" style="text-align: center">
+            <p class="f14 bais pr">
+                <a href="" target="_blank" class="aboutus pr ml100"><span>关于我们</span>
+                </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="" target="_blank">欧冶金融</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="" target="_blank"><span>友情链接</span>
+                </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                客服热线：400-9000-800
+            </p>
+            <p class="f14 bais ml80">Copyright © 2016 欧冶金融版权所有 沪ICP备16045015号-1</p>
+            <p class="f14 bais ml150">
+                <a target="_blank" href="" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="../res/images/login/ba-icon.png" style="float:left;" class="mr5"> 沪公网安备 0000000000号</a>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script type="text/javascript" src="../res/js/basic/login.js"></script>
+</html>

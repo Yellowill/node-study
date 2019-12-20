@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>我的工作台</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css"/>
+    <link rel="stylesheet" href="../../base/css/base.css"/>
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+    <link rel="stylesheet" href="../res/css/skin.css"/>
+    <link rel="stylesheet" href="../res/css/data-page.css"/>
+    <!--[if IE]>
+	<script type="text/javascript" src="../../base/js/core/excanvas.js"></script>
+	<script type="text/javascript" src="../../base/js/core/html5.js"></script>
+	<![endif]-->
+</head>
+<body class="g-navbar-fixed workbench">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+
+    <div class="ui-menu"></div>
+    <div class="ui-workbench-content">
+        <div class="ui-workbench-head">
+                <div class="ui-workbench-head-title"><i class="iconfont red font14"></i><span class="mar-left-5">今日<span id="transferNum">0</span>条未读债权转让提醒，</span><a id="transferNotice" href="../bill/noticeTransfer.html">立即查看<i class="iconfont"></i></a></div>
+                <div class="ui-workbench-head-box">
+                    <div class="ui-workbench-head-left">
+                        <p class="title">
+                            近期待兑付
+                            <span class="unit">
+							单位（万元）
+						</span>
+                            <span>
+							<span style="cursor: not-allowed;">
+								<i class="iconfont spot-btn-left" style="color: rgb(221, 221, 221);"></i>
+							</span>
+							&nbsp;
+							<span style="cursor: pointer;">
+								<i class="iconfont spot-btn-right" style="color: rgb(99, 102, 107);"></i>
+							</span>
+						</span>
+                        </p>
+                        <div class="chart">
+                            <canvas id="canvas_3" width="522" height="140" barlength="6" left="0" style="left: 0px;"></canvas>
+                        </div>
+                    </div>
+                    <div class="ui-workbench-head-middle">
+                        <div class="canvas-box">
+                            <canvas id="canvas_1" width="200" height="180"></canvas>
+                            <canvas id="canvas_2" width="200" height="180"></canvas>
+                        </div>
+                        <div class="ui-canvas-box-icon">
+						<span class="icon">
+							<i class="iconfont icon01"></i>
+							<i class="iconfont icon02"></i>
+						</span>
+                            <span class="txt">开立额度</span>
+                        </div>
+                        <a href="JavaScript:;" class="ui-promote-btn"><i class="iconfont"></i>提升额度</a>
+                    </div>
+                    <div class="ui-workbench-head-right">
+                        <div class="ui-workbench-head-amount ">
+                            <p class="t1">开立额度(万元)</p>
+                            <p class="t2" id="creditAmount"></p>
+                            <a id="addBill" href="javascript:;" class="ui-workbench-head-btn">立即开立</a>
+                        </div>
+                        <ul>
+                            <li>
+                                <p class="t1">已用额度</p>
+                                <p class="t2" id="usedAmount"></p>
+                            </li>
+                            <li>
+                                <p class="t1">可用额度</p>
+                                <p class="t2" id="remainAmount"></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <div class="ui-workbench-main">
+                <div class="ui-workbench-calendar" id="calendar">
+                    <!--<div class="ui-workbench-calendar-head">-->
+                        <!--<div class="title">兑付计划</div>-->
+                        <!--<div class="ui-workbench-calendar-tab">-->
+                            <!--<li status="" class="calender-tab ">Today</li>-->
+                            <!--<li status="0" class="calender-tab active">待兑</li>-->
+                            <!--<li status="1" class="calender-tab active">已兑</li>-->
+                        <!--</div>-->
+                        <!--<div class="ui-workbench-calendar-date">-->
+                            <!--<span class="icon-arrow prev-month"><i class="iconfont"></i></span>-->
+                            <!--<span class="date">2018年08月</span>-->
+                            <!--<span class="icon-arrow next-month"><i class="iconfont"></i></span>-->
+                        <!--</div>-->
+                        <!--<div class="clear"></div>-->
+                    <!--</div>-->
+                    <!--<div class="ui-workbench-calendar-content">-->
+                        <!--<table>-->
+                            <!--<thead>-->
+                                <!--<tr>-->
+                                    <!--<th class="weekend">一</th>-->
+                                    <!--<th class="normal">二</th>-->
+                                    <!--<th class="normal">三</th>-->
+                                    <!--<th class="normal">四</th>-->
+                                    <!--<th class="normal">五</th>-->
+                                    <!--<th class="normal">六</th>-->
+                                    <!--<th class="weekend">日</th>-->
+                                <!--</tr>-->
+                            <!--</thead>-->
+                            <!--<tbody class="tbody">-->
+                                <!--<tr class="">-->
+                                    <!--<td date="2018-07-30">-->
+                                        <!--<div class="ui-workbench-widget ui-other-month ">-->
+                                            <!--<div class="ui-day-number">30</div>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                    <!--<td date="2018-07-31">-->
+                                        <!--<div class="ui-workbench-widget ui-other-month ">-->
+                                            <!--<div class="ui-day-number">31</div>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                    <!--<td date="2018-08-01">-->
+                                        <!--<div class="ui-workbench-widget ">-->
+                                            <!--<div class="ui-day-number">1</div>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                    <!--<td date="2018-08-02">-->
+                                        <!--<div class="ui-workbench-widget ">-->
+                                            <!--<div class="ui-day-number">2</div>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                    <!--<td date="2018-08-03"><div class="ui-workbench-widget "><div class="ui-day-number">3</div></div></td>-->
+                                    <!--<td date="2018-08-04"><div class="ui-workbench-widget "><div class="ui-day-number">4</div></div></td>-->
+                                    <!--<td date="2018-08-05">-->
+                                        <!--<div class="ui-workbench-widget ">-->
+                                            <!--<div class="ui-day-number">5</div>-->
+                                            <!--<div class="ui-calendar-tips ui-last-tips">-->
+                                                <!--<p>已过期</p><p>34599万元</p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                                <!--<tr class="">-->
+                                    <!--<td date="2018-08-06"><div class="ui-workbench-widget "><div class="ui-day-number">6</div></div></td>-->
+                                    <!--<td date="2018-08-07"><div class="ui-workbench-widget "><div class="ui-day-number">7</div></div></td>-->
+                                    <!--<td date="2018-08-08"><div class="ui-workbench-widget "><div class="ui-day-number">8</div></div></td>-->
+                                    <!--<td date="2018-08-09"><div class="ui-workbench-widget "><div class="ui-day-number">9</div></div></td>-->
+                                    <!--<td date="2018-08-10"><div class="ui-workbench-widget "><div class="ui-day-number">10</div></div></td>-->
+                                    <!--<td date="2018-08-11"><div class="ui-workbench-widget "><div class="ui-day-number">11</div></div></td>-->
+                                    <!--<td date="2018-08-12"><div class="ui-workbench-widget "><div class="ui-day-number">12</div></div></td>-->
+                                <!--</tr>-->
+                                <!--<tr class="">-->
+                                    <!--<td date="2018-08-13"><div class="ui-workbench-widget "><div class="ui-day-number">13</div></div></td>-->
+                                    <!--<td date="2018-08-14"><div class="ui-workbench-widget "><div class="ui-day-number">14</div></div></td>-->
+                                    <!--<td date="2018-08-15"><div class="ui-workbench-widget "><div class="ui-day-number">15</div></div></td>-->
+                                    <!--<td date="2018-08-16"><div class="ui-workbench-widget "><div class="ui-day-number">16</div></div></td>-->
+                                    <!--<td date="2018-08-17"><div class="ui-workbench-widget "><div class="ui-day-number">17</div></div></td>-->
+                                    <!--<td date="2018-08-18"><div class="ui-workbench-widget "><div class="ui-day-number">18</div></div></td>-->
+                                    <!--<td date="2018-08-19"><div class="ui-workbench-widget "><div class="ui-day-number">19</div></div></td>-->
+                                <!--</tr>-->
+                                <!--<tr class="">-->
+                                    <!--<td date="2018-08-20"><div class="ui-workbench-widget "><div class="ui-day-number">20</div></div></td>-->
+                                    <!--<td date="2018-08-21"><div class="ui-workbench-widget ui-today"><div class="ui-day-number">21</div></div></td>-->
+                                    <!--<td date="2018-08-22"><div class="ui-workbench-widget "><div class="ui-day-number">22</div><div class="ui-calendar-tips ui-future-tips"><a class="" href="" style="color:#e4ad57;"><p><i class="iconfont font12"></i> 剩2天</p><p>34599万元</p></a></div></div></td>-->
+                                    <!--<td date="2018-08-23"><div class="ui-workbench-widget "><div class="ui-day-number">23</div></div></td>-->
+                                    <!--<td date="2018-08-24"><div class="ui-workbench-widget "><div class="ui-day-number">24</div></div></td>-->
+                                    <!--<td date="2018-08-25"><div class="ui-workbench-widget "><div class="ui-day-number">25</div></div></td>-->
+                                    <!--<td date="2018-08-26"><div class="ui-workbench-widget "><div class="ui-day-number">26</div></div></td>-->
+                                <!--</tr>-->
+                                <!--<tr class="">-->
+                                    <!--<td date="2018-08-27"><div class="ui-workbench-widget "><div class="ui-day-number">27</div></div></td>-->
+                                    <!--<td date="2018-08-28"><div class="ui-workbench-widget "><div class="ui-day-number">28</div></div></td>-->
+                                    <!--<td date="2018-08-29"><div class="ui-workbench-widget "><div class="ui-day-number">29</div></div></td>-->
+                                    <!--<td date="2018-08-30"><div class="ui-workbench-widget "><div class="ui-day-number">30</div><div class="ui-calendar-tips ui-future-tips"><a class="" href="" style="color:#e4ad57;"><p><i class="iconfont font12"></i> 剩10天</p><p>34599万元</p></a></div></div></td>-->
+                                    <!--<td date="2018-08-31"><div class="ui-workbench-widget "><div class="ui-day-number">31</div></div></td>-->
+                                    <!--<td date="2018-09-01"><div class="ui-workbench-widget ui-other-month "><div class="ui-day-number">1</div></div></td>-->
+                                    <!--<td date="2018-09-02"><div class="ui-workbench-widget ui-other-month "><div class="ui-day-number">2</div></div></td>-->
+                                <!--</tr>-->
+                                <!--<tr class="">-->
+                                    <!--<td date="2018-09-03"><div class="ui-workbench-widget ui-other-month "><div class="ui-day-number">3</div></div></td>-->
+                                    <!--<td date="2018-09-04"><div class="ui-workbench-widget ui-other-month "><div class="ui-day-number">4</div></div></td>-->
+                                    <!--<td date="2018-09-05"><div class="ui-workbench-widget ui-other-month "><div class="ui-day-number">5</div></div></td>-->
+                                    <!--<td date="2018-09-06"><div class="ui-workbench-widget ui-other-month "><div class="ui-day-number">6</div></div></td>-->
+                                    <!--<td date="2018-09-07"><div class="ui-workbench-widget ui-other-month "><div class="ui-day-number">7</div></div></td>-->
+                                    <!--<td date="2018-09-08"><div class="ui-workbench-widget ui-other-month "><div class="ui-day-number">8</div></div></td>-->
+                                    <!--<td date="2018-09-09"><div class="ui-workbench-widget ui-other-month "><div class="ui-day-number">9</div></div></td>-->
+                                <!--</tr>-->
+                            <!--</tbody>-->
+                        <!--</table>-->
+                    <!--</div>-->
+                    <!--<div class="g-calendar-warp hide">-->
+                        <!--<div class="g-calendar-box"></div>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="ui-workbench-total">
+                    <div class="title">统计项</div>
+                    <div class="ui-workbench-total-box">
+                        <ul class="ui-workbench-total-list" top="0">
+                            <li>
+                                <div class="icon"><i class="iconfont icon01"></i></div>
+                                <div class="text">
+                                    <p class="t1">开立金额</p>
+                                    <p class="t2"><span id="amount">0</span>万元</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><i class="iconfont icon02"></i></div>
+                                <div class="text">
+                                    <p class="t1">转让笔数</p>
+                                    <p class="t2"><span id="transferCount">0</span>笔</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><i class="iconfont icon03"></i></div>
+                                <div class="text">
+                                    <p class="t1">融资金额</p>
+                                    <p class="t2"><span id="financingAmount">0</span>万元</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><i class="iconfont icon04"></i></div>
+                                <div class="text">
+                                    <p class="t1">涉及客户</p>
+                                    <p class="t2"><span id="clientCount">0</span>家</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><i class="iconfont icon05"></i></div>
+                                <div class="text">
+                                    <p class="t1">最多转让</p>
+                                    <p class="t2"><span id="changeCount">0</span>手</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="ui-workbench-total-bottom">
+                        <a href="JavaScript:;" class="ui-workbench-total-btn mar-right-10 btn-up notClick"><i class="iconfont"></i></a>
+                        <a href="JavaScript:;" class="ui-workbench-total-btn btn-down ui-btn-hover"><i class="iconfont"></i></a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/basic/workbench.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

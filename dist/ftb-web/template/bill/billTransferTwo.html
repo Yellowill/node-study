@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>转让通宝</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css" />
+    <link rel="stylesheet" href="../../base/css/base.css" />
+    <link rel="stylesheet" href="../../base/css/module.css" />
+    <link rel="stylesheet" href="../res/css/skin.css" />
+    <link rel="stylesheet" href="../res/css/data-page.css" />
+</head>
+<body class="g-navbar-fixed addBill billTransferTwo-height100">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container billTransferTwo-height100">
+    <div class="ui-menu"></div>
+    <div class="g-page-main page-demo billTransferTwo">
+        <div>
+            <div class="g-nav">
+                <i class="iconfont">&#xe601;</i><span class="g-nav-title g-font18">转让通宝</span><span class="g-font12"><span style="font-weight: bold;color:#ea544a;margin-left: 20px;">温馨提示：</span><span style="color:#ea544a;">若实际业务情况需拆分发票金额，可选择发票并直接填写发票的本次使用金额。</span></span>
+                <a class="goback g-right" href="transferBill.html">&lt;&lt;返回通宝转让列表</a>
+            </div>
+            <div class="transfer-header">
+                <div class="progress-bar">
+                    <ul class="clearBoth">
+                        <a href="billTransferOne.html" class="one"><li>1.补充信息</li></a>
+                        <li class="active">2.选择发票</li>
+                        <li>3.选择通宝</li>
+                        <li>4.提交申请</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <div><label>转让金额：</label><span class="transfer-num"></span></div>
+                    <div><label>受让方：</label><span class="receiving-com"></span></div>
+                </div>
+            </div>
+            <div class="bgcolor-white">
+                <div class="search-wrap w1095">
+                    <label style="margin-left: 5px;" for="invoiceDate">开票日期：</label>
+                    <select name="" id="invoiceDate">
+                        <option value="0">全部</option>
+                        <option value="1">近一月</option>
+                        <option value="2">近两月</option>
+                        <option value="3">近三月</option>
+                        <option value="4">三个月前</option>
+                    </select>
+                    <span class="relative searcher"><label style="margin-left: 5px;" for="invoiceNo">发票号码：</label><input style="width: 100px;" id="invoiceNo" type="text" /><i class="iconfont">&#xe74e;</i></span>
+                    <label style="margin-left: 5px;" for="buycom">购方：</label>
+                    <select name="" id="buycom">
+                    </select>
+                    <label style="margin-left: 5px;" for="givecom">销方：</label>
+                    <select name="" id="givecom">
+                    </select>
+                    <a style="margin-left: 10px;" href="javascript:;" class="search-btn" id="iptSearch">查询</a>
+                    <a style="margin-left: 10px;" href="javascript:;" class="search-btn" id="reSubmit">重置</a>
+                </div>
+            </div>
+        </div>
+        <div class="g-container">
+            <div class="transfer-content">
+                <div class="invoice-con-wrap">
+                    <div id="scroll-bar" class="invoice-con">
+                        <div class="invoice-wrap">
+                            <ul class="invoice-box-wrap clearBoth billTransferTwo-pad-bottom300" id="scroll-ul-content">
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="transfer-footer">
+            <div style="float: left;matgin-top:20px;margin-right: 10px;">
+                <span id="selectAll" class="no-check"><i class="iconfont" ></i><span style="margin-left:10px;">全选</span></span>
+                <span id="noselectAll" style="display: none;" class="all-check"><i class="iconfont" ></i><span style="margin-left:10px;">取消全选</span></span>
+            </div>
+
+            <a href="javascript:;" class="next-step">下一步</a>
+            <a style="float: right;margin-right:8px;" href="billTransferOne.html" class="prev-step">上一步</a>
+            <div class="select-info">
+                <div>已选<b class="select-num">0.00</b></div>
+                <span>(含税)</span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<div id="scrollbox"></div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/billTransferTwo.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>通宝开立</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css"/>
+    <link rel="stylesheet" href="../../base/css/base.css"/>
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+    <link rel="stylesheet" href="../res/css/skin.css"/>
+    <link rel="stylesheet" href="../res/css/data-page.css"/>
+</head>
+<body class="g-navbar-fixed">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="g-page-left">
+        <div class="g-menu"><!--菜单收拢 g-menu-mini-->
+            <div class="g-menu-bg"></div>
+            <div class="g-menu-main">
+            </div>
+        </div>
+    </div>
+    <div class="g-page-main">
+        <div class="g-nav">
+            <div class="g-nav-title col-xs-6 g-font20">发票管理</div>
+        </div>
+        <div class="g-container">
+            <div class="g-row">
+                <div class="g-tabs">
+                    <ul class="g-nav-tabs">
+                        <li class="g-nav-tabs-li active"><a href="javascript:;">全部<span></span></a></li>
+                        <li class="g-nav-tabs-li"><a href="javascript:;">未使用<span></span></a></li>
+                        <li class="g-nav-tabs-li"><a href="javascript:;">已使用</a></li>
+                    </ul>
+                    <div class="g-tab-content">
+                        <div class="g-tab-main active">
+                            <div class="g-row g-search">
+                                <div class="g-left g-in-search">
+                                    <ul class="clearBoth in-tabs">
+                                        <li class="g-left active">全部</li>
+                                        <li class="g-left">近一个月</li>
+                                        <li class="g-left">近三个月</li>
+                                        <li class="g-left">近一年</li>
+                                    </ul>
+                                </div>
+                                <div class="g-right g-in-search">
+                                    接收方：<input type="text" placeholder="接收方公司名称" class="pdright28">
+                                    <i class="iconfont g-input-icon">&#xe74e;</i>
+                                    <a href="javascript:;"
+                                       class="ui-button ui-search-button ui-btn-primary g-right">查询</a>
+                                </div>
+                            </div>
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th>发票号码/发票代码</th>
+                                        <th>含税金额</th>
+                                        <th>不含税金额</th>
+                                        <th>开票日期</th>
+                                        <th>税率</th>
+                                        <th>购买方/销售方</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="billIssue-tbady-content">
+                                    <!--加载表格位置-->
+                                    </tbody>
+                                </table>
+                                <div class="g-table-bottom">
+                                    <div class="g-right">
+                                        <div id="page"></div>
+                                        <div class="mar-left-5 page-content">共<span>535</span>条记录 共<span>54</span>页
+                                        </div>
+                                    </div>
+                                    <div class="g-clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-tab-main">222</div>
+                        <div class="g-tab-main">333</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/transferInvoiceManagement.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

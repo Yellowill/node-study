@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>工作台-供应商</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" href="../../base/css/iconfont.css"/>
+	<link rel="stylesheet" href="../../base/css/base.css"/>
+	<link rel="stylesheet" href="../../base/css/module.css"/>
+	<link rel="stylesheet" href="../res/css/skin.css"/>
+	<link rel="stylesheet" href="../res/css/data-page.css"/>
+</head>
+<body class="g-navbar-fixed workbench">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+	<div class="ui-menu"></div>
+	<div class="ui-workbench-content">
+		<div class="ui-workbench-main">
+			<div class="ui-workbench-calendar" id="calendar"></div>
+
+			<div class="ui-workbench-total">
+				<!--通知-->
+				<div class="ui-workbench-remind">
+					<img src="../res/images/work_remind.png" />
+					<p class="t1"><em id="transferNum">0条</em> 受让通知</p>
+					<img src="../res/images/work_shadow.png" class="ui-workbench-remind-shadow" />
+					<a id="assigneeBill" href="../bill/assigneeBill.html" id="view-btn" class="ui-workbench-remind-btn">查看</a>
+				</div>
+				<div class="ui-workbench-total-morebox">
+					<ul class="ui-workbench-total-list" top="0">
+						<li>
+							<div class="icon"><i class="iconfont icon02">&#xe68c;</i></div>
+							<div class="text">
+								<p class="t1">转让笔数</p>
+								<p class="t2"><span id="transferCount">0</span>笔</p>
+							</div>
+						</li>
+						<li>
+							<div class="icon"><i class="iconfont icon03">&#xe694;</i></div>
+							<div class="text">
+								<p class="t1">融资金额</p>
+								<p class="t2"><span id="financingAmount">0</span>万元</p>
+							</div>
+						</li>
+						<li>
+							<div class="icon"><i class="iconfont icon04">&#xe61d;</i></div>
+							<div class="text">
+								<p class="t1">持有金额</p>
+								<p class="t2"><span id="holdAmount">0</span>万元</p>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+				<div class="ui-workbench-total-bottom">
+					<!--<div class="g-left ui-workbench-total-more">-->
+						<!--<p class="txt"><i class="iconfont g-font14 mar-right-5">&#xe63f;</i>更多操作</p>-->
+						<!--<ul class="ui-workbench-total-dropdown">-->
+							<!--<li><a href="JavaScript:;">转让</a></li>-->
+							<!--<li><a href="JavaScript:;">融资</a></li>-->
+						<!--</ul>-->
+					<!--</div>-->
+					<div class="">
+						<a href="JavaScript:;" class="ui-workbench-total-btn mar-right-10 ui-btn-hover btn-up"><i class="iconfont">&#xe6d6;</i></a>
+						<a href="JavaScript:;" class="ui-workbench-total-btn mar-right-10 ui-btn-hover btn-down"><i class="iconfont">&#xe6d4;</i></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-workbench-slogen mar-top-20">
+			<div class="ui-workbench-slogen-box">
+				<img src="../res/images/icon-slogen.png" class="icon-slogen" />
+				<div class="ui-workbench-slogen-main">
+					<p class="txt"><em>助力</em>中小企业新发展<span class="mar-left-20">创造支付结算新工具</span></p>
+					<div class="g-text-center">
+						<a id="financing" href="../bill/financingList.html" class="btn01">融 资</a><a id="transferBill" href="../bill/transferBill.html" class="btn02">转 让</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/basic/workbenchSupplier.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

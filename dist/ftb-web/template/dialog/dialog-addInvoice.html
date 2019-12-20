@@ -1,0 +1,133 @@
+<style type="text/css">
+    .ui-dialog-box{ width: 620px; height: 580px; position: relative; visibility: hidden; box-sizing: content-box; }
+    .ui-dialog-title{ line-height: 44px; margin: 0 10px; border-bottom: 1px solid #eee; font-size: 14px;box-sizing: content-box;}
+    .ui-dialog-close{width:20px; height:20px;cursor:pointer; position:absolute; right:10px; top:10px; z-index:100;}
+    .ui-dialog-close .btn-close{color:#333; display:block; position:relative; text-align:center; width: 20px;-webkit-transition:all 0.5s ease-out;transition:all 0.5s ease-out;}
+    .ui-dialog-close:hover .btn-close{-webkit-transform:rotate(180deg); -o-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);}
+    .ui-dialog-main{ padding-top: 20px; }
+    .ui-dialog-main div { margin-bottom: 6px; }
+    .ui-dialog-main div label {display: inline-block; width: 184px;text-align: right;padding-right: 5px;font-size: 12px;color: #555; }
+    .ui-dialog-main div input {width: 254px;height: 30px;line-height: 30px;border: 1px solid #e6e6e6;color: #333; }
+    .ui-dialog-main div input:disabled {background: #f9f9f9; }
+    .ui-dialog-main div span { margin-left: 7px;color: #999;font-size: 12px; }
+    .ui-dialog-main div.upload { color: #00c1de;margin: 10px 0 5px; }
+    .ui-dialog-main div.upload i { font-size: 14px; }
+    .ui-dialog-main div.upload a { text-decoration: underline;margin-left: 3px; }
+    .ui-dialog-box .hr { border-top: 1px solid #e5e5e5;margin: 0 10px; }
+    .g-table.g-table-sm td, .g-table.g-table-sm th{ padding: 2px 15px; line-height: 20px; font-size: 12px;}
+    .tc-table-bottom{ height: 38px; overflow: hidden; position: relative;}
+    .g-master-content { top: 90px!important; }
+    .img_box{text-align:center;padding:15px;}
+    .img_box img{width:150px;}
+    .notice{padding:10px 15px;line-height:18px;height:60px;color:#ea544a;}
+    .invoice-hr{width:370px;    border-top: 1px solid #e5e5e5;margin: 0 10px;}
+    /*#newInvoice { display: block; width: 90px;height: 37px;line-height: 37px;text-align: center; margin:0 auto;background: #ea544a;border-radius: 5px;color: #fff; box-shadow: 0 3px 0 #d2443a;font-size: 14px;}*/
+    .notice-con{display:inline-block;width:100%;}
+    .add_box{padding: 10px;font-size: 14px;height:200px;}
+    .clearBoth{ width: 100%; height: 130px; padding: 15px 0;  border:1px solid #f0f0f0;}
+    .objection-btn { display: inline-block;  width: 90px;height: 43px;line-height: 43px;text-align: center;margin-right:5px; background: #ea544a;border-radius: 5px;color: #fff; box-shadow: 0 3px 0 #d2443a;font-size: 14px; cursor: pointer;}
+    .objection-btn-close{display: inline-block; width: 90px;height: 43px;line-height: 43px;text-align: center;margin-left:5px;  background: #f5f5f5;border-radius: 5px;color: #fff; box-shadow: 0 3px 0 #dddddd;font-size: 14px; color: #555; cursor: pointer;}
+</style>
+<div class="ui-dialog-box">
+    <div class="ui-dialog-title">添加发票</div>
+    <a href="JavaScript:;" class="ui-dialog-close"><img src="../../base/images/AsyncDialogBox-close.gif" class="btn-close" /></a>
+
+    <!--<div class="ui-dialog-main">-->
+        <!--<div><label for="invoiceCode">发票代码：</label><input id="invoiceCode" type="text" maxlength="12" autocomplete="off" /><span class="tips">请输入10或12位发票代码</span></div>-->
+        <!--<div><label for="invoiceNum">发票号码：</label><input id="invoiceNum" type="text" maxlength="8" autocomplete="off" /><span class="tips">请输入8位发票号码</span></div>-->
+        <!--<div class="invoice-num"><label for="invoiceAmount">发票金额：</label><input id="invoiceAmount" type="text" autocomplete="off" /><span class="tips">请输入不含税金额</span></div>-->
+        <!--<div class="check-code g-hide"><label for="invoiceCheckCode">发票效验码：</label><input id="invoiceCheckCode" type="text" autocomplete="off" /><span class="tips">请输入发票校验码后6位</span></div>-->
+        <!--<div><label for="createDate">开票日期：</label><input id="createDate" readonly="readonly" type="text" /></div>-->
+        <!--<div><label for="buyer">购买方：</label><input id="buyer" type="text" disabled="disabled" /></div>-->
+        <!--<div><label for="saler">销售方：</label><input id="saler" type="text" disabled="disabled" /></div>-->
+        <!--<div><label for="TaxAmount">含税金额：</label><input id="TaxAmount" type="text" disabled="disabled" /></div>-->
+        <!--<div><label for="TaxRate">发票税率：</label><input id="TaxRate" type="text" disabled="disabled" /></div>-->
+        <!--<div class="upload"><label>附件：</label><i class="iconfont upload">&#xe60b;</i><a href="javacript:;">添加附件</a></div>-->
+    <!--</div>-->
+    <div class="add_box">
+        <div><span style="font-weight: bold;">方案一：</span><span>选择电脑中的发票图片，通过下面[添加附件]添加</span></div>
+        <div style="width: 100%;height:110px;padding:10px 0;">
+            <div class="upload-wrap relative" ><i class="iconfont upload">&#xe60b;</i><a href="javascript:;" id="browse">添加附件</a><i class="iconfont arrow">&#xe72e;</i><span class="mar-left-15 file" style="font-size:12px;color:#ea544a;">仅支持jpg，png，zip，pdf格式，一次可选择多个附件（每个附件不超过10M）。</span></div>
+            <div style="margin:5px 15px;color: #999;font-size: 12px;">
+                <p>注：1、上传jpg，png时，每张图片只能对应一张发票;
+                </p>
+                <p style="padding: 5px 0 5px 25px;">2、上传pdf时，pdf文件中要求每一页只能放置一张发票;</p>
+                <p style="padding: 0 0 5px 25px;">3、上传zip时，请将图片格式的发票打包成压缩文件上传，每张图片只能对应一张发票。</p>
+            </div>
+            <div style="margin-left:15px;max-height:80px;height:80px;overflow-y: auto;overflow-x: hidden;width: 500px;word-wrap: break-word;" class="clearBoth upload-info uploadBox" id="scroll-bar"></div>
+            <p class="error-tips mar-top-10"></p>
+        </div>
+    </div>
+    <div class="add_box">
+        <div><span style="font-weight: bold;">方案二：</span><span>通过手机扫面二维码进入微信小程序进行添加</span></div>
+        <div class="img_box"><img src="../res/images/addInvoice.jpg" alt=""></div>
+    </div>
+
+<!--    <div class="invoice-hr"></div>-->
+    <div class="notice">
+        <span style="margin-left: 15px;" class="notice-con">温馨提示：添加发票后将进行验真，约2~5分钟，请您耐心等待</span>
+    </div>
+
+    <div style="text-align: center;" class="ui-form-btn  mar-bottom-20">
+        <a href="javascript:;" class="objection-btn" id="trueSubmit">确认</a>
+        <a href="javascript:;" class="objection-btn-close" id="newInvoice">关闭</a>
+    </div>
+</div>
+<script>
+
+    $('#invoiceCode').blur(function () {
+       var a = $('#invoiceCode').val();
+       if ( checkInvoice(a) == '04' || checkInvoice(a) == '10' ) {
+           $(this).parent().siblings('div.invoice-num').addClass('g-hide');
+           $(this).parent().siblings('div.check-code').removeClass('g-hide');
+       }else {
+           $(this).parent().siblings('div.invoice-num').removeClass('g-hide');
+           $(this).parent().siblings('div.check-code').addClass('g-hide');
+       }
+    });
+    function checkInvoice(a) {
+        var code = ["144031539110", "131001570151", "133011501118", "111001571071"];
+        var b, c;
+        if (a.length == 12) {
+            b = a.substring(7, 8)
+            for (var i = 0; i < code.length; i++) {
+                if (a == code[i]) {
+                    c = "10";
+                    break;
+                }else {
+                    c = "99";
+                }
+            }
+            if (c == "99") {
+                if (a.charAt(0) == '0' && a.substring(10, 12) == '11') {
+                    c = "10"
+                }
+                if (a.charAt(0) == '0' && (a.substring(10, 12) == '04' || a.substring(10, 12) == '05')) {
+                    c = "04"
+                }
+                if (a.charAt(0) == '0' && (a.substring(10, 12) == '06' || a.substring(10, 12) == '07')) {
+                    c = "11"
+                }
+                if (a.charAt(0) == '0' && a.substring(10, 12) == '12') {
+                    c = "14"
+                }
+                if (a.substring(10, 12) == '17' && a.charAt(0) == '0') {
+                    c = "15"
+                }
+                if (c == "99" && b == 2 && a.charAt(0) != '0') {
+                    c = "03"
+                }
+            }
+        } else if (a.length == 10) {
+            b = a.substring(7, 8)
+            if (b == 1 || b == 5) {
+                c = "01"
+            } else if (b == 6 || b == 3) {
+                c = "04"
+            } else if (b == 7 || b == 2) {
+                c = "02"
+            }
+        }
+        return c;
+    }
+</script>

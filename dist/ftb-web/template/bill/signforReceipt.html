@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>开立签收回单列表</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css"/>
+    <link rel="stylesheet" href="../../base/css/base.css"/>
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+    <link rel="stylesheet" href="../res/css/skin.css"/>
+    <link rel="stylesheet" href="../res/css/data-page.css"/>
+</head>
+<body class="g-navbar-fixed">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container billIssueSelect">
+    <div class="ui-menu ui-menu-bg"></div>
+    <div class="g-page-main page-demo">
+        <div class="g-nav">
+            <div class="g-nav-title col-xs-6 g-font20">开立回单列表</div>
+            <div class="col-xs-6 g-text-right">
+                <a id="downloadSelect" href="javascript:;" class="ui-button-ghost g-nav-btn ui-btn-red"><i
+                        class="iconfont mar-right-5">&#xe67b;</i>下载选中</a>
+                <!--<a id="downloadAll" href="javascript:;" class="ui-button-ghost g-nav-btn ui-btn-red"><i-->
+                        <!--class="iconfont mar-right-5">&#xe608;</i>下载全部</a>-->
+                <a id="openbillexc" href="javascript:;" class="ui-button-ghost g-nav-btn ui-btn-red mar-right-10"><i class="iconfont mar-right-5">&#xe67b;</i>导出Excel</a>
+
+            </div>
+        </div>
+        <div class="g-container">
+            <div class="g-row">
+                <div class="g-tabs">
+                    <div class="g-tab-content">
+                        <div class="g-row g-search">
+                            <div class="g-left">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">签收日期：</label>
+                                    <div class="g-left">
+                                            <span class="g-input-icon-right g-left">
+                                                <input type="text" class="date" readonly="readonly" id="js-calender-start" placeholder="">
+                                                <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                        <span class="g-input-line col60">—</span>
+                                        <span class=" g-input-icon-right g-left">
+                                                <input type="text" placeholder=" " readonly="readonly" value="" class="date"
+                                                       id="js-calender-stop">
+                                                <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-left mar-left-10">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">兑付日期：</label>
+                                    <div class="g-left">
+                                            <span class="g-input-icon-right g-left">
+                                                <input type="text" class="date" readonly="readonly" id="js-payment-start" placeholder="">
+                                                <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                        <span class="g-input-line col60">—</span>
+                                        <span class=" g-input-icon-right g-left">
+                                                <input type="text" placeholder=" " readonly="readonly" value="" class="date"
+                                                       id="js-payment-stop">
+                                                <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-left: 10px;" class="g-left">
+                                <input style="width: 170px;" type="text"  class="pdright28 institution">
+                                <p id="recName" style="position: absolute;color: #999999;top:33px;right:215px;">开立方公司名称</p>
+                                <i class="iconfont g-input-icon">&#xe74e;</i>
+                                <a href="javascript:;"
+                                   class="ui-button ui-search-button ui-btn-primary g-right">查询</a>
+                            </div>
+                            <div style="margin-top: 10px;margin-left: 5px;" class="g-left">
+                                <a href="javascript:;" id="opens"
+                                   class="g-right">更多>></a>
+                            </div>
+                        </div>
+                        <div id="othersc" style="display: none;" class="g-row g-search">
+                            <div class="g-left">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">通宝编号：</label>
+                                    <div class="g-left">
+                                        <input type="text" placeholder="通宝编号" class="pdright28 tbNum">
+                                        <i class="iconfont g-input-icon">&#xe74e;</i>
+                                        <!--                                        <a href="javascript:;"-->
+                                        <!--                                           class="ui-button ui-search-button ui-btn-primary g-right">查询</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-tab-main active">
+                            <div class="g-main-content">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="30" class="check-box all-check">
+                                            <span><i class="iconfont">&#xe74c;</i></span>
+                                        </th>
+                                        <th width="10%">通宝编号</th>
+                                        <th width="20%">开立方</th>
+                                        <th width="10%">开立金额</th>
+                                        <th width="15%">签收日期</th>
+                                        <th width="15%">兑付日期</th>
+                                        <th width="8%">状态</th>
+                                        <th width="12%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="billIssue-main-content">
+                                    <!--表格加载位置-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="g-table-bottom">
+                            <div class="g-right">
+                                <div id="page"></div>
+                                <div class="mar-left-5 page-content">共<span class="pageTotal"></span>条记录 共<span class="pageCount"></span>页</div>
+                                </div>
+                            </div>
+                            <div class="g-clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/signforReceipt.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

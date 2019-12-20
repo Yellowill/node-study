@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>通宝转让详情</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css"/>
+    <link rel="stylesheet" href="../../base/css/base.css"/>
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+    <link rel="stylesheet" href="../res/css/skin.css"/>
+    <link rel="stylesheet" href="../res/css/data-page.css"/>
+</head>
+<body class="g-navbar-fixed">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container">
+    <div class="g-page-main-detail">
+        <!--startprint1-->
+        <div class="g-container">
+            <div class="g-row">
+                <div class="g-tabs">
+                    <ul class="g-bigTab">
+                        <li class="g-nav-tabs-li active"><a href="javascript:;">查看详情</a></li>
+                        <li class="g-nav-tabs-li"><a href="javascript:;">贸易背景</a></li>
+                    </ul>
+                    <div class="g-tab-content">
+                        <div class="g-tab-main active">
+                            <!--表格加载位置-->
+                            <div id="g-tab-main-info">
+
+                            </div>
+                            <div class="g-small-head-title mar-top-10">通宝列表</div>
+                            <table class="g-table-detail">
+                                <thead>
+                                <tr>
+                                    <th>通宝编号</th>
+                                    <th>开立方</th>
+                                    <th>转让金额</th>
+                                    <th>兑付日期</th>
+                                </tr>
+                                </thead>
+                                <tbody class="g-main-content-info">
+                                <!--表格加载位置-->
+
+                                </tbody>
+                            </table>
+                            <div id="operation-btn" class="col-xs-12 mar-bottom-20 mar-top-20 g-text-center">
+
+                            </div>
+                        </div>
+                        <div class="g-tab-main">
+                            <table class="mar-top-10 g-new-table">
+                                <tbody>
+                                <tr class="g-list-content">
+                                    <td class="tit">贸易合同编号</td>
+                                    <td style="word-break: break-all;" class="con contractNumber "></td>
+                                    <td class="tit">贸易合同名称</td>
+                                    <td style="word-break: break-all;" class="con border-right contractName "></td>
+                                </tr>
+                                <tr class="g-list-content">
+                                    <td class=" tit">签订金额</td>
+                                    <td style="word-break: break-all;" class=" con contractAmount"></td>
+                                    <td class=" tit">签订日期</td>
+                                    <td style="word-break: break-all;" class=" con border-right contractDate"></td>
+                                </tr>
+                            </table>
+                            <table class="mar-bottom-15 g-new-table">
+                                <tbody>
+                                <tr class="g-list-content">
+                                    <td class="tit">附件下载</td>
+                                    <td style="width: 850px;border-top:1px solid #f0f0f0;" class="border-bottom border-right">
+                                        <div class="upload-wrap"><i class="iconfont upload"></i>&nbsp;&nbsp;</div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="g-table-detail">
+                                <thead>
+                                <tr>
+                                    <th>发票代码</th>
+                                    <th>发票号码</th>
+                                    <th>开票日期</th>
+                                    <th>发票税率</th>
+                                    <th>发票含税金额</th>
+                                    <th>本次使用金额</th>
+                                    <th>购买方/销售方</th>
+                                    <th>附件</th>
+                                </tr>
+                                </thead>
+                                <tbody class="invoiceDetail">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--endprint1-->
+    </div>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/transferDetail.js?t=" + Date.now() + "'><\/script>");</script>
+<script type="text/javascript" src="../res/js/private/jQuery.print.js"></script>
+</html>

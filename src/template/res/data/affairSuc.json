@@ -1,0 +1,13 @@
+{
+	"affairInfo": [
+		{
+			"time":"2018-08-05",
+			"status":0,
+			"money":34599,
+			"iconShow":false,
+			"icon":"&#xe614;",
+			"remaingDays":2
+		}
+	]
+
+}

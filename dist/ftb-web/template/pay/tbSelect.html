@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>通宝支付收银台</title>
+    <meta name="author" content="635179674@qq.com" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="res/css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="res/css/base.css" />
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+    <link rel="stylesheet" type="text/css" href="res/css/easternpay-topbottom.css" />
+    <link rel="stylesheet" type="text/css" href="res/css/easternpay.css" />
+    <link rel="stylesheet" type="text/css" href="../res/css/skin.css" />
+</head>
+<body class="ui-eastenpay-resultbody">
+    <!-- 页面头部 -->
+    <div class="ui-eastenpay-head">
+        <div class="ui-eastenpay-navbar">
+            <div class="ui-eastenpay-navbar-main">
+                <div class="ui-eastenpay-navbar-left">
+                    <ul>
+                        <li><a href="JavaScript:;" class="mar-right-10"><i class="iconfont">&#xe6bf;</i>欧冶金融</a><san class="line">|</san></li>
+                        <li><a href="https://www.easternpay.com.cn/dfft/" class="mar-left-10">东方付通</a></li>
+                    </ul>
+                </div>
+                <div class="ui-eastenpay-navbar-right">
+                    <ul>
+                        <li><a href="JavaScript:;">欢迎您, <span class="company-name"></span></a></li>
+                        <li class="ui-navbar-dropdown">
+                            <a href="JavaScript:;">业务导航</a>
+                            <ul class="ui-navbar-dropdown-box">
+                                <li><a href="http://lc.ouyeelf.com">财富平台</a></li>
+                                <li><a href="http://rz.ouyeelf.com/oyrz_finance_web">融资平台</a></li>
+                                <li><a href="http://www.shdongchan.com/shdc_web">资产管理</a></li>
+                                <li><a href="https://www.easternpay.com.cn/dfft/">东方付通</a></li>
+                            </ul>
+                        </li>
+                        <li><i class="iconfont">&#xe687;</i><em>400-820-1688</em><em class="mar-left-5 mar-right-5">|</em><em>95025</em></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="ui-eastenpay-menu">
+            <div class="ui-eastenpay-menu-main">
+                <div class="ui-eastenpay-logo">
+                    <img src="res/images/logo-ouyeel.png" class="ui-logo-img" alt="" />
+                    <span class="text">通宝支付收银台</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 页面内容 -->
+    <div class="ui-eastenpay-container content1">
+        <div class="ui-order-details">
+            <div class="ui-order-details-main">
+                <div class="ui-order-details-item">
+                    <p>采购订单号：<span class="otherBizNum"></span></p>
+                    <p>转出方：<span class="transferorName"></span></p>
+                    <div class="ui-order-details-more" style="display:none;">
+                        <p>受让方：<span class="transfereeName"></span></p>
+                        <p>订单金额：<span class="ui-order-details-amount"></span></span>元</p>
+                    </div>
+                </div>
+                <a href="JavaScript:;" class="ui-order-details-account"><i class="ui-order-details-amount"></i><em>元</em></a>
+                <a href="JavaScript:;" class="ui-order-details-operate">订单详情<i class="iconfont">&#xe636;</i></a>
+            </div>
+        </div>
+        <!-- 页面内容 -->
+        <div class="ui-eastenpay-content">
+            <div class="ui-eastenpay-main pad-bottom-80">
+                <div class="ui-eastenpay-table-title mar-top-20">
+                    <span>通宝明细</span>
+                </div>
+                <div class="ui-eastenpay-table mar-top-20">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="8%" class="check-all">
+                                    <label class="check-box "> 
+                                        <span class="check">
+                                            <input type="checkbox" class="ace" checked="checked">
+                                        </span>
+                                    </label>
+                                </th>
+                                <th width="17%">通宝编号</th>
+                                <th width="25%">开立方</th>
+                                <th width="20%">转让金额(元)</th>
+                                <th width="17%">兑付日期</th>
+                                <th width="13%">持有金额(元)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check checked">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>1,234,121,909.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">100.00</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check checked">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>1,234,121,909.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">100.00</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>100.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">100.00</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check checked">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>1,234,121,909.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">100.00</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>1,122,200.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">555.00</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>100.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">40.00</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>100.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">100.00</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>10.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">105,550.00</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>14,540.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">10.00</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<label class="check-box "> -->
+                                        <!--<span class="check">-->
+                                            <!--<input type="checkbox" class="ace" checked="checked">-->
+                                        <!--</span>-->
+                                    <!--</label>-->
+                                <!--</td>-->
+                                <!--<td>T19061065527-001</td>-->
+                                <!--<td>采购客户A</td>-->
+                                <!--<td>-->
+                                    <!--<div class="ui-table-operate">-->
+                                        <!--<span>1,050.00</span>-->
+                                        <!--<a href="JavaScript:;" class="ui-table-edit"><i class="iconfont">&#xe6be;</i></a>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>2019-06-10</td>-->
+                                <!--<td class="red">10.00</td>-->
+                            <!--</tr>-->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mar-top-20 ">
+                    <!--<div class="ui-eastenpay-pagenation right">-->
+                        <!--<a href="JavaScript:;" class="ui-next-page" style="display: none;">上一页</a>-->
+                        <!--<ul>-->
+                            <!--<li>-->
+                                <!--<a href="JavaScript:;" class="active">1</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="JavaScript:;">2</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="JavaScript:;">3</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="JavaScript:;">4</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="JavaScript:;">5</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                        <!--<a href="JavaScript:;" class="ui-next-page">下一页</a>-->
+                    <!--</div>-->
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="ui-eastenpay-submit">
+                <div class="ui-eastenpay-submit-main">
+                    <div class="left">
+                        <!--<label class="check-box "> -->
+                            <!--<span class="check">-->
+                                <!--<input type="checkbox" class="ace" checked="checked">-->
+                            <!--</span>-->
+                            <!--<span class="mar-left-5">全选</span>-->
+                        <!--</label>-->
+                        <span class="mar-left-20 middle">已选：<em class="red bold font16 already-check">0</em>条，合计金额：<em class="red bold font16 total-amount">0.00</em> 元</span>
+                    </div>
+                    <div class="right">
+                        <!--<a href="easternpay-TransferContract.html" class="ui-eastenpay-btn ui-btn-next btn-red mar-left-10 ">下一步</a>-->
+                        <a href="JavaScript:;" class="ui-eastenpay-btn ui-btn-next btn-red mar-left-10">下一步</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-eastenpay-container content2" style="display: none">
+        <!-- 页面内容 -->
+        <div class="ui-eastenpay-content">
+            <div class="ui-eastenpay-main">
+                <div class="ui-eastenpay-result ui-eastenpay-resubmit">
+                    <p class="txt">
+                        <i class="iconfont">&#xe613;</i><span>业务单据号：<span class="businessNum"></span></span><span class="mar-left-10">订单金额：<em class="red bold billAmount"></em> 元</span>
+                        <!--<a href="JavaScript:;" class="mar-left-10">查看详情<i class="iconfont font18">&#xe696;</i></a>-->
+                    </p>
+                    <div class="relative">
+                        <ul class="ui-eastenpay-resubmit-detail">
+                            <li class="ui-eastenpay-resubmit-title">转让明细</li>
+                            <li>
+                                <div class="title">转让编号</div>
+                                <div class="text batchNo"></div>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="title">转让金额</div>
+                                <div class="text"><em class="red bold transferAmount"></em>元</div>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="title">转让日期</div>
+                                <div class="text createDate"></div>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="title">转让方</div>
+                                <div class="text transferorName"></div>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="title">受让方</div>
+                                <div class="text transfereeName"></div>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="title">状态</div>
+                                <div class="text status"></div>
+                                <div class="clear"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ui-eastenpay-result-btn">
+                        <a href="JavaScript:;" class="btn-01 btn-resubmit mar-right-20 revoke">撤销</a>
+                        <a href="JavaScript:;" class="btn-02 re-submit" >重新提交</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='res/js/tbSelect.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

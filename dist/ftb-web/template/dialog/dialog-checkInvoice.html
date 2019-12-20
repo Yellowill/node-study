@@ -1,0 +1,55 @@
+
+<style type="text/css">
+    .ui-dialog-box{ width: 570px; height: 370px; position: relative; visibility: hidden;box-sizing: content-box;}
+    /*.ui-dialog-title{ line-height: 44px; margin: 0 10px; border-bottom: 1px solid #eee; font-size: 14px;box-sizing: content-box;}
+    .ui-dialog-close{width:20px;height:20px;cursor:pointer; position:absolute; right:10px; top:10px; z-index:100;}
+    .ui-dialog-close .btn-close{color:#333; display:block; position:relative; text-align:center; width: 20px;-webkit-transition:all 0.5s ease-out;transition:all 0.5s ease-out;}
+    .ui-dialog-close:hover .btn-close{-webkit-transform:rotate(180deg); -o-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);}
+    */
+    .ui-dialog-box .ui-form-two .ui-form-group .control-label{ width: 130px;}
+    .ui-dialog-box .ui-form-two{ height: auto;position: relative; overflow: hidden;display: block;}
+    .ui-dialog-box .ui-form-two .ui-form-group .ui-form-item{ margin-left: 130px;}
+    .ui-dialog-box .ui-form-two .ui-form-group  .control-textarea{ height: 70px;}
+
+    .ui-dialog-title{ line-height: 44px; margin: 0 10px; border-bottom: 1px solid #eee; font-size: 14px;box-sizing: content-box;}
+    .clearBoth{ width: 100%; height: 130px; padding: 15px 0; margin-left: 15px; border:1px solid #f0f0f0;}
+    .objection-box{ width: 100%; height: 230px; padding: 15px 0; }
+    .objection-title{ font-size: 18px; color: #ea544a; padding: 10px 0;}
+    .objection-title label{ font-size: 18px;}
+    .objection-box .objection-title .iconfont{ font-size: 25px;position: relative; top:3px;}
+    .objection-box textarea{  width: 400px; height: 80px; border: 1px solid #e6e6e6; font-size: 14px; line-height: 21px;}
+    .objection-btn { display: inline-block;  width: 90px;height: 43px;line-height: 43px;text-align: center;margin-right:5px; background: #ea544a;border-radius: 5px;color: #fff; box-shadow: 0 3px 0 #d2443a;font-size: 14px; cursor: pointer;}
+    .objection-btn-close{display: inline-block; width: 90px;height: 43px;line-height: 43px;text-align: center;margin-left:5px;  background: #f5f5f5;border-radius: 5px;color: #fff; box-shadow: 0 3px 0 #dddddd;font-size: 14px; color: #555; cursor: pointer;}
+    .file-box{float: left;margin-right: 30px;height: 32px;margin-bottom: 10px;}
+
+</style>
+<div class="ui-dialog-box">
+    <div class="ui-dialog-title">发票上传</div>
+    <!--<div class="ui-dialog-title">驳回原因</div>-->
+    <!--<a href="JavaScript:;" class="ui-dialog-close"><img src="../base/images/AsyncDialogBox-close.gif" class="btn-close" /></a>-->
+    <div class="ui-form-two objection-box">
+        <div class="ui-form-group">
+<!--            <div class="objection-title">-->
+<!--                <label class="control-label control-label-textarea">-->
+<!--                    <i class="iconfont">&#xe67b;</i>发票上传-->
+<!--                </label>-->
+<!--            </div>-->
+            <div style="width: 100%;height:230px;padding:0 15px;">
+                <div class="upload-wrap relative" ><i class="iconfont upload">&#xe60b;</i><a href="javascript:;" id="browse">添加附件</a><i class="iconfont arrow">&#xe72e;</i><span class="mar-left-15 file" style="font-size:12px;color:#ea544a;">仅支持jpg，png，zip，pdf格式，一次可选择多个附件（每个附件不超过10M）。</span></div>
+                <div style="margin:5px 15px;color: #999;">
+                    <p>注：1、上传jpg，png时，每张图片只能对应一张发票;
+                    </p>
+                    <p style="padding: 5px 0 5px 25px;">2、上传pdf时，pdf文件中要求每一页只能放置一张发票;</p>
+                    <p style="padding: 0 0 5px 25px;">3、上传zip时，请将图片格式的发票打包成压缩文件上传，每张图片只能对应一张发票。</p>
+                </div>
+                <div style="max-height:130px;overflow-y: auto;overflow-x: hidden;overflow-x: hidden;width: 500px;word-wrap: break-word;" class="clearBoth upload-info uploadBox" id="scroll-bar"></div>
+                <p class="error-tips mar-top-10"></p>
+            </div>
+        </div>
+        <div style="text-align: center;" class="ui-form-btn  mar-bottom-20">
+            <a href="javascript:;" class="objection-btn" id="trueOlad-button">确认</a>
+            <a href="javascript:;" class="objection-btn-close" id="validate-save">关闭</a>
+        </div>
+    </div>
+</div>
+

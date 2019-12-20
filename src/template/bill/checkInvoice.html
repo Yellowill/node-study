@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>发票管理</title>
+    <link rel="stylesheet" href="../../base/css/iconfont.css"/>
+    <link rel="stylesheet" href="../../base/css/base.css"/>
+    <link rel="stylesheet" href="../../base/css/module.css"/>
+    <link rel="stylesheet" href="../res/css/skin.css"/>
+    <link rel="stylesheet" href="../res/css/data-page.css"/>
+</head>
+<body class="g-navbar-fixed">
+<div class="g-navbar g-navbar-fixed-top">
+</div>
+<div class="g-page-container billIssueSelect">
+    <div class="ui-menu ui-menu-bg"></div>
+    <div class="g-page-main page-demo">
+        <div class="g-nav">
+            <div class="g-nav-title col-xs-6 g-font20">验票记录列表</div>
+            <div class="col-xs-6 g-text-right">
+                <a id="openbillexc" href="javascript:;" class="ui-button-ghost g-nav-btn ui-btn-red mar-right-10"><i
+                        class="iconfont mar-right-5">&#xe67b;</i>发票上传</a>
+            </div>
+        </div>
+        <div class="g-container">
+            <div class="g-row">
+                <div class="g-tabs">
+                    <ul class="g-nav-tabs">
+                        <li class="g-nav-tabs-li active" id="check_sum"><a href="javascript:;">全部<span></span></a></li>
+                        <li class="g-nav-tabs-li" id="check_success"><a href="javascript:;">验票成功<span></span></a></li>
+                        <li class="g-nav-tabs-li" id="checking"><a href="javascript:;">验票中<span></span></a></li>
+                        <li class="g-nav-tabs-li" id="check_fail"><a href="javascript:;">验票失败<span></span></a></li>
+                    </ul>
+                    <div class="g-tab-content">
+                        <div class="g-row g-search">
+                            <div class="g-left">
+                                <div class="g-form-group">
+                                    <label class="col40 g-left">验票日期：</label>
+                                    <div class="g-left">
+                                            <span class="g-input-icon-right g-left">
+                                                <input type="text" class="date" readonly="readonly" id="js-calender-start" placeholder="">
+                                                <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                            <span class="g-input-line col60">—</span>
+                                            <span class=" g-input-icon-right g-left">
+                                                    <input type="text" placeholder=" " readonly="readonly" value="" class="date" id="js-calender-stop">
+                                                    <i class="iconfont g-input-icon-date">&#xe67f;</i>
+                                            </span>
+                                    </div>
+                                    <a href="javascript:;" class="ui-button ui-search-button ui-btn-primary g-right" style="margin-left: 20px;">查询</a>
+
+                                </div>
+                            </div>
+
+                            <div class="g-right" style="margin-top:16px;"><a href="javascript:;"   id="refreshtitle"></a></div>
+                        </div>
+                        <div class="g-tab-main active">
+                                <table class="g-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="16%">验票时间</th>
+                                        <th width="16%">更新时间</th>
+                                        <th width="16%">发票代码</th>
+                                        <th width="16%">发票号码</th>
+                                        <th width="12%">验票状态</th>
+                                        <th width="12%">失败原因</th>
+                                        <th width="12%">操作</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody class="invoice-tbody-content">
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="g-tab-main">
+                            <table class="g-table">
+                                <thead>
+                                <tr>
+                                    <th width="16%">验票时间</th>
+                                    <th width="16%">更新时间</th>
+                                    <th width="16%">发票代码</th>
+                                    <th width="16%">发票号码</th>
+                                    <th width="12%">验票状态</th>
+                                    <th width="12%">失败原因</th>
+                                    <th width="12%">操作</th>
+
+                                </tr>
+                                </thead>
+                                <tbody class="invoice-tbody-content">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="g-tab-main">
+                            <table class="g-table">
+                                <thead>
+                                <tr>
+                                    <th width="16%">验票时间</th>
+                                    <th width="16%">更新时间</th>
+                                    <th width="16%">发票代码</th>
+                                    <th width="16%">发票号码</th>
+                                    <th width="12%">验票状态</th>
+                                    <th width="12%">失败原因</th>
+                                    <th width="12%">操作</th>
+
+                                </tr>
+                                </thead>
+                                <tbody class="invoice-tbody-content">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="g-tab-main">
+                            <table class="g-table">
+                                <thead>
+                                <tr>
+                                    <th width="16%">验票时间</th>
+                                    <th width="16%">更新时间</th>
+                                    <th width="16%">发票代码</th>
+                                    <th width="16%">发票号码</th>
+                                    <th width="12%">验票状态</th>
+                                    <th width="12%">失败原因</th>
+                                    <th width="12%">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="invoice-tbody-content">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="g-table-bottom">
+                            <div class="g-right">
+                                <div id="page"></div>
+                                <div class="mar-left-5 page-content">共<span class="pageTotal"></span>条记录 共<span class="pageCount"></span>页</div>
+                                </div>
+                            </div>
+                            <div class="g-clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../base/js/core/es5-shim.min.js"></script>
+<script type="text/javascript" src="../../base/js/core/require.js"></script>
+<script type="text/javascript" src="../../base/js/base.config.js"></script>
+<script>document.write("<script type='text/javascript' src='../res/js/bill/checkInvoice.js?t=" + Date.now() + "'><\/script>");</script>
+</html>

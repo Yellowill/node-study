@@ -1,0 +1,123 @@
+<style type="text/css">
+.ui-dialog-box{ width: 1000px; height: 520px; position: relative; visibility: hidden; box-sizing: content-box; }
+.ui-dialog-title{ line-height: 44px; margin: 0 10px; border-bottom: 1px solid #eee; font-size: 14px;box-sizing: content-box;}
+.ui-dialog-close{width:20px; height:20px;cursor:pointer; position:absolute; right:10px; top:10px; z-index:100;}
+.ui-dialog-close .btn-close{color:#333; display:block; position:relative; text-align:center; width: 20px;-webkit-transition:all 0.5s ease-out;transition:all 0.5s ease-out;}
+.ui-dialog-close:hover .btn-close{-webkit-transform:rotate(180deg); -o-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);}
+.ui-dialog-main{ padding:10px 20px;}
+.g-table.g-table-sm td, .g-table.g-table-sm th{ padding: 2px 15px; line-height: 20px; font-size: 12px;}
+.tc-table-bottom{ height: 38px; overflow: hidden; position: relative;}
+</style>
+<div class="ui-dialog-box">
+	<div class="ui-dialog-title">选择转让通宝</div>
+	<a href="JavaScript:;" class="ui-dialog-close"><img src="../base/images/AsyncDialogBox-close.gif" class="btn-close" /></a>
+	<div class="ui-dialog-main">
+		<div class="g-row">
+			<div class="col-xs-12">
+				<div class="g-row g-form-horizontal">
+					<div class="col-xs-6">
+						<div class="g-form-group">
+							<label class="col-xs-2 g-control-label no-padding-right">生成日期：</label>
+							<div class="col-xs-8">
+                                    <span class="col-xs-5 g-input-icon-right">
+                                        <input type="text" class="col-xs-12" id="js-calender-start" placeholder="">
+                                        <i class="iconfont g-input-icon-date"></i>
+                                    </span>
+								<span class="g-input-line">—</span>
+								<span class="col-xs-5 g-input-icon-right">
+                                        <input type="text" placeholder=" " value="" class="col-xs-12" id="js-calender-stop">
+                                        <i class="iconfont g-input-icon-date"></i>
+                                    </span>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<a href="javascript:;" class="ui-button ui-btn-sm ui-btn-blue"><i class="iconfont mar-right-5">&#xe74e;</i>查询</a>
+					</div>
+					
+				</div>
+				<div class="g-widget-body no-padding no-border">
+					<div class="g-row g-form-horizontal">
+						<div class="col-xs-4">
+							<div class="g-form-group">
+								<label class="col-xs-3 g-control-label no-padding-right">业务编号：</label>
+								<div class="col-xs-9">
+									<input type="text" class="col-xs-12">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<table id="" class="g-table g-table-border g-table-border-bottom g-table-bg"  style="min-height: 292px;">
+					<thead class="">
+					<tr class="">
+						<th class="center" width="5%">
+							<label style="top:-2px; position:relative;">
+								<input type="checkbox" class="g-form-check dc-all-checkbox-change">
+								<span class="g-form-lbl"></span>
+							</label>
+						</th>
+						<th class="" width="50%" colspan="2">通宝基本信息</th>
+						<th class="" width="25%">到期日期</th>
+						<th class="" width="20%">持有金额(元)</th>
+					</tr>
+					</thead>
+					<tbody class="">
+					<tr class="">
+						<td class="center">
+							<label style="top:-2px; position:relative;">
+								<input type="checkbox" class="g-form-check dc-single-checkbox-change">
+								<span class="g-form-lbl"></span>
+							</label>
+						</td>
+						<td width="20%" class="g-text-left">
+							流转批号：SX201802516523<br>
+							通宝编号：YS2015014526325<br>
+							签发方：核心企业0089
+						</td>
+						<td class="g-text-left">转让日期：2018-05-30<br>
+							生成日期：2018-04-24<br>
+							来源企业：核心企业00789
+						</td>
+						<td width="15%" class="g-text-center">2018-05-30</td>
+						<td width="15%" class="g-text-center">50,000</td>
+					</tr>
+					<tr class="">
+						<td class="center">
+							<label style="top:-2px; position:relative;">
+								<input type="checkbox" class="g-form-check dc-single-checkbox-change">
+								<span class="g-form-lbl"></span>
+							</label>
+						</td>
+						<td width="20%" class="g-text-left">
+							流转批号：SX201802516523<br>
+							通宝编号：YS2015014526325<br>
+							签发方：核心企业0089
+						</td>
+						<td class="g-text-left">转让日期：2018-05-30<br>
+							生成日期：2018-04-24<br>
+							来源企业：核心企业00789
+						</td>
+						<td width="15%" class="g-text-center">2018-05-30</td>
+						<td width="15%" class="g-text-center">50,000</td>
+					</tr>
+					</tbody>
+				</table>
+				
+				<div class="g-hr g-hr-double g-dotted"></div>
+				
+				<div class="tc-table-bottom mar-top-10">
+					<!--分页-->
+						<div class="g-left">
+							<div id="page2"></div>
+						</div>
+					<div class="g-right">
+						<a href="javascript:;" class="ui-button-ghost ui-btn-orange" id="adc"><i class="iconfont g-font14 mar-right-5">&#xe61b;</i>添加全部资产</a>
+						<a href="javascript:;" class="ui-button ui-btn-blue mar-left-10"><i class="iconfont g-font14 mar-right-5">&#xe628;</i>确认</a>
+					</div>
+					<div class="g-clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

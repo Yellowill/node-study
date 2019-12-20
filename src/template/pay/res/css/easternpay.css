@@ -1,0 +1,105 @@
+.ui-eastenpay-container{ position: relative;}
+/* 订单详情 */
+.ui-order-details{ background: #f1f1f1; padding: 10px 0; border-bottom: 2px solid #b40000;}
+.ui-order-details-main{ max-width: 1200px; min-width: 700px;margin: 0 auto; font-size: 14px; position: relative;}
+.ui-order-details-item{ line-height: 24px; min-height: 48px; position: relative;}
+.ui-order-details-item p{ min-height: 24px; line-height: 24px;}
+.ui-order-details-account{ position: absolute; right: 0; top: 0; line-height: 24px;}
+.ui-order-details-account i{ color: #b40000; font-size: 18px; font-weight: bold;}
+.ui-order-details-account em{ font-display: 14px; color: #555;}
+.ui-order-details-operate{ position: absolute; bottom: -10px; right: 0; padding: 0 10px; background: #b40000; color: #fff; line-height: 30px; font-size: 14px;}
+.ui-order-details-operate i{ font-size: 12px; margin-left: 5px;}
+.ui-eastenpay-content{ position: relative;}
+.ui-eastenpay-main{ position: relative; max-width: 1200px; min-width: 700px;margin: 0 auto; font-size: 14px; padding-bottom: 20px;}
+.ui-eastenpay-table-title{ position: relative; line-height: 30px;}
+/* 表格 */
+.ui-eastenpay-table-title span{ font-size: 18px; font-weight: bold; }
+.ui-eastenpay-table table{ width: 100%; border-collapse: collapse; border-spacing: 0; line-height: 40px; }
+.ui-eastenpay-table table thead th{ background: #fbfbfb; line-height: 30px; padding: 8px 20px; font-weight: normal; color: #666;  vertical-align: middle; border-bottom: 1px solid #e5e5e5;} 
+.ui-eastenpay-table table td { line-height: 30px; vertical-align: middle; border-bottom: 1px solid #e6e6e6; padding: 8px 20px; text-align: center; }
+.ui-eastenpay-table table td.red{color: #ea544a;}
+.ui-eastenpay-table table tr:hover{ background: #fbfbfc;}
+.ui-eastenpay-table table td .ui-table-operate{ display: inline-block; position: relative; padding:0 30px;}
+.ui-eastenpay-table table td .ui-table-input{ width: 100px; display: inline-block; *display: inline; *zoom: 1; height: 20px; line-height: 20px; background: #fff; border: 1px solid #ccc; padding: 3px 10px; text-align: center;}
+.ui-eastenpay-table table td .ui-table-edit{line-height: 30px; color: #0583cf; position: absolute; right: 0; top: 0; visibility: hidden;}
+.ui-eastenpay-table table td .ui-table-edit i{ font-size: 14px; }
+.ui-eastenpay-table table td .ui-table-comfirm{ font-size: 13px; line-height: 30px; color: #0583cf;  position: absolute; right: 0; top: 0; } 
+.ui-eastenpay-table table td .ui-table-comfirm:hover{ text-decoration: underline;}
+.ui-eastenpay-table table tr:hover .ui-table-edit{ visibility: visible;}
+/* 单选多选 */
+input[type=checkbox].ace, input[type=radio].ace { filter: alpha(opacity=0); -moz-opacity:0; opacity: 0;  z-index: 12;  width: 15px; height: 15px;  cursor: pointer; margin: 0;}
+.ui-eastenpay-container .check-box{ cursor: pointer; position: relative; display: inline-block; line-height: 16px;}
+.ui-eastenpay-container .check-box .check{ background: url(../images/checkbox.png) no-repeat 0 0;width: 15px; height: 15px; display: inline-block; }
+.ui-eastenpay-container .check-box .checked{ background: url(../images/checkbox.png) no-repeat center bottom;width: 15px; height: 15px; display: inline-block; }
+.ui-eastenpay-container .radio-box{position: relative; display: inline-block; line-height: 16px;}
+.ui-eastenpay-container .radio-box .check{ background: url(../images/radio.png) no-repeat 0 0;width: 15px; height: 15px; display: inline-block; }
+.ui-eastenpay-container .radio-box .checked{ background: url(../images/radio.png) no-repeat center bottom;width: 15px; height: 15px; display: inline-block; }
+/* 翻页 */
+.ui-eastenpay-pagenation{ display: inline-block; *display: inline; *zoom: 1;}
+.ui-eastenpay-pagenation ul{ padding: 0 ; margin: 0;}
+.ui-eastenpay-pagenation ul,.ui-eastenpay-pagenation ul li,.ui-eastenpay-pagenation a{ display: inline-block; *display: inline; *zoom: 1;}
+.ui-eastenpay-pagenation a{ background: #fff; color: #555; line-height: 24px; border-radius: 2px; padding: 0 5px; margin: 0 2px; min-width: 14px; text-align: center;}
+.ui-eastenpay-pagenation a.active,.ui-eastenpay-pagenation a:hover{ color: #fff; background: #cc0000;}
+/* 按钮-下一页 */
+.ui-eastenpay-btn{display:inline-block;*display: inline; *zoom: 1; padding:0 15px; line-height:30px;text-align:center; white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid transparent;border-radius:2px;text-indent: 0;}
+.ui-eastenpay-btn.ui-btn-next{ padding: 1px 20px;}
+.ui-eastenpay-btn.btn-red{color:#fff;border:1px solid #b40000;background-color:#b40000;}
+.ui-eastenpay-main.pad-bottom-80{ padding-bottom: 80px;}
+.ui-eastenpay-submit {position: fixed; height: 60px; line-height:60px; left: 0; right: 0; bottom: 0; background: #fff; display: block; box-shadow: 0 0 10px 5px rgba(0,0,0,.1); border-top: 1px solid #ddd; z-index: 5;}
+.ui-eastenpay-submit-main{ width: 1200px; margin: 0 auto; height: 60px; position: relative;}
+.ui-detail-btn-download {text-align: center; border-radius: 3px; display: inline-block; color: #555; font-size: 14px; background: #f9f9f9; padding: 0 30px; line-height: 40px; border:1px solid #a5a5a5;}
+.ui-eastenpay-submit label {cursor:pointer;}
+.ui-eastenpay-submit-main .red{ color: #b40000;}
+/* 应收账款债券转让协议 */
+.ui-eastenpay-contract-title{ font-size: 22px;  text-align: center; line-height: 1;}
+.ui-eastenpay-contract-main{ line-height:2; font-size: 14px;}
+.ui-eastenpay-contract-main em{ font-style: normal;}
+.ui-eastenpay-contract-num{ text-align: right; margin-top: 20px; font-weight: bold;}
+.ui-eastenpay-contract-main .mar-top-30{ margin-top: 30px;}
+.ui-eastenpay-contract-main p{ margin-bottom: 5px;}
+.ui-eastenpay-contract-main p.mar-bottom-10{ margin-bottom: 10px;}
+.ui-eastenpay-contract-main p.text-indent{ text-indent: 2em;}
+.ui-eastenpay-contract-main p .decoration{border-bottom: 1px solid #333; min-width: 160px; min-height: 14px; display: inline-block; line-height: 1; padding: 0 5px 5px; }
+.ui-eastenpay-contract-table{position: relative; padding: 0 2em;}
+.ui-eastenpay-contract-table table{ border-collapse: collapse; border-spacing: 0; width: 100%; line-height: 1.2; border: 1px solid #333; text-align: center;}
+.ui-eastenpay-contract-table table td{ border: 1px solid #333; padding: 8px 10px;}
+.ui-eastenpay-table-autograph{padding: 0 2em;}
+.ui-eastenpay-table-autograph table{ width: 100%;}
+.ui-eastenpay-table-autograph td{ line-height: 2; vertical-align: middle;}
+
+.ui-eastenpay-resultbody{ position: relative; height: 100%; }
+.ui-eastenpay-resultbody .ui-eastenpay-container{position: absolute;top: 0; left: 0; right: 0; bottom: 0; background: #fff; margin-top: 111px; margin-bottom: 80px; z-index: 1;}
+.ui-eastenpay-resultbody .ui-eastenpay-menu{ box-shadow: 0 0 8px 0px rgba(0,0,0,.1); }
+.ui-eastenpay-resultbody .ui-eastenpay-content,.ui-eastenpay-resultbody .ui-eastenpay-main{ height: 100%; padding-bottom: 0;}
+.ui-eastenpay-result{ position: absolute; margin: 0 auto; width: 650px; left: 50%; margin-left: -325px; top: 50%; transform: translate(0,-50%); top: 0\9; margin-top: 60px\9; }
+.ui-eastenpay-result .txt{ text-align: center; font-size: 24px; line-height: 1; vertical-align: middle;}
+.ui-eastenpay-result .txt i{ font-size: 34px; line-height: 1; margin-right: 15px; vertical-align: middle; position: relative; top: -1px;}
+.ui-eastenpay-result .txt.success{ color: #62b53a;}
+.ui-eastenpay-result .txt.fail{ color: #b40000;}
+.ui-eastenpay-result-table{ width: 380px; margin: 0 auto; margin-top: 40px;}
+.ui-eastenpay-result-table td{ line-height: 1.6; padding: 6px 5px; }
+.ui-eastenpay-result-btn{ text-align: center; margin-top: 40px;}
+.ui-eastenpay-result-btn a{display: inline-block; *display: inline; *zoom: 1; white-space: nowrap; vertical-align: middle; border-radius: 2px; padding: 0 15px; line-height: 30px; border: 1px solid transparent;} 
+.ui-eastenpay-result-btn a.btn-01{ border-color: #b40000; background: #fff; color: #b40000;}
+.ui-eastenpay-result-btn a.btn-011{ border-color: #555; background: #fff; color: #555;}
+.ui-eastenpay-result-btn a.btn-02{ border-color: #b40000; background: #b40000; color: #fff;}
+.ui-eastenpay-result-btn a.btn-022{ border-color: #555; background: #555; color: #fff;}
+.ui-eastenpay-footer{ background: #000; height: 80px; text-align: center; position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; font-size: 14px; }
+.ui-eastenpay-footer p{ color: #fff; line-height: 80px;}
+.ui-eastenpay-footer p a{ color: #fff;}
+.ui-eastenpay-footer p a:hover{ text-decoration: underline;}
+
+.ui-eastenpay-result.ui-eastenpay-resubmit .txt{ font-size: 15px; color: #333;}
+.ui-eastenpay-result.ui-eastenpay-resubmit .txt i{ color: #0583cf;}
+.ui-eastenpay-result.ui-eastenpay-resubmit .txt .red{ color: #b40000;}
+.ui-eastenpay-result.ui-eastenpay-resubmit .txt a{color: #0583cf; text-decoration: underline;}
+.ui-eastenpay-resubmit-detail{ width: 450px; margin: 0 auto; margin-top: 16px; font-size: 14px; border: 1px solid #ccc;}
+.ui-eastenpay-resubmit-detail li{border-top: 1px solid #ccc; margin-top: -1px; box-sizing: content-box; position: relative;}
+.ui-eastenpay-resubmit-detail .ui-eastenpay-resubmit-title{background: #f1f1f1; font-weight: bold; padding: 8px 10px; border-top: 1px solid #ccc;line-height: 1.6; *margin-top: 0;}
+.ui-eastenpay-resubmit-detail .title{  width: 100px;  padding: 8px 10px; border-right: 1px solid #ccc; vertical-align: middle;line-height: 1.6; box-sizing: content-box; position: absolute; left: 0; top: 0; bottom: 0; }
+.ui-eastenpay-resubmit-detail .text{  padding: 8px 10px; text-align: right; vertical-align: middle;line-height: 1.6; box-sizing: content-box; padding-left: 121px;}
+.ui-eastenpay-resubmit-detail .text .red{ color: #b40000;}
+.ui-eastenpay-result.ui-eastenpay-resubmit .ui-eastenpay-result-btn{ margin-top: 30px;}
+.ui-eastenpay-result-btn a.btn-01.btn-resubmit{ min-width: 58px; }
+.ui-eastenpay-result-btn a.btn-011.btn-resubmit{ min-width: 58px; }
+.clear{ *height: 0;}

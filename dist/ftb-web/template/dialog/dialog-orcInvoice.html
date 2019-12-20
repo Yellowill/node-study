@@ -1,0 +1,89 @@
+
+<style type="text/css">
+    .ui-dialog-box{ width: 800px; height: 600px; position: relative; visibility: hidden;box-sizing: content-box;}
+    /*.ui-dialog-title{ line-height: 44px; margin: 0 10px; border-bottom: 1px solid #eee; font-size: 14px;box-sizing: content-box;}
+    .ui-dialog-close{width:20px;height:20px;cursor:pointer; position:absolute; right:10px; top:10px; z-index:100;}
+    .ui-dialog-close .btn-close{color:#333; display:block; position:relative; text-align:center; width: 20px;-webkit-transition:all 0.5s ease-out;transition:all 0.5s ease-out;}
+    .ui-dialog-close:hover .btn-close{-webkit-transform:rotate(180deg); -o-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);}
+    */
+    .ui-dialog-box .ui-form-two .ui-form-group .control-label{ width: 130px;}
+    .ui-dialog-box .ui-form-two{ height: auto;position: relative; overflow: hidden;display: block;}
+    .ui-dialog-box .ui-form-two .ui-form-group .ui-form-item{ margin-left: 130px;}
+    .ui-dialog-box .ui-form-two .ui-form-group  .control-textarea{ height: 70px;}
+    .ui-dialog-title{ line-height: 44px; margin: 0 10px; border-bottom: 1px solid #eee; font-size: 14px;box-sizing: content-box;}
+    .main-con { width: 804px;margin: auto;min-height: 520px;}
+    .clearBoth{ width: 100px; height: 100px; padding: 15px 0; margin: 0 auto; }
+    .objection-box{ width: 100%; height: 200px; padding: 15px 0; margin: 0 auto; }
+    .objection-title{ font-size: 18px; color: #ea544a; padding: 10px 0;}
+    .objection-title label{ font-size: 18px;}
+    .objection-box .objection-title .iconfont{ font-size: 25px;position: relative; top:3px;}
+    .objection-box textarea{  width: 400px; height: 80px; border: 1px solid #e6e6e6; font-size: 14px; line-height: 21px;}
+    .objection-btn { display: inline-block;  width: 90px;height: 43px;line-height: 43px;margin-right:5px;text-align: center; background: #ea544a;border-radius: 5px;color: #fff; box-shadow: 0 3px 0 #d2443a;font-size: 14px; cursor: pointer;}
+    .objection-btn-close{display: inline-block; width: 90px;height: 43px;line-height: 43px;margin-left:5px;text-align: center; background: #f5f5f5;border-radius: 5px;color: #fff; box-shadow: 0 3px 0 #dddddd;font-size: 14px; color: #555; cursor: pointer;}
+
+</style>
+<div class="ui-dialog-box">
+    <div id="bigInvoiceBox" style="width:100%;height:100%;display: none;" ></div>
+    <div>
+        <div class="main-con relative">
+            <!--<div class="ui-dialog-title">驳回原因</div>-->
+            <!--<a href="JavaScript:;" class="ui-dialog-close"><img src="../base/images/AsyncDialogBox-close.gif" class="btn-close" /></a>-->
+            <div class="ui-dialog-title">发票验票</div>
+            <div id="invoiceBox" style="display:none;width: 100%;height: 200px;text-align:center;vertical-align:middle;margin-top:15px;">
+                <img id="image" style="cursor: pointer;border: 1px solid gray;left: 50%;top: 50%;height: 200px;"/>
+            </div>
+<!--            <div id="addBoxdd" style="display: none;width: 100%;height: 200px;text-align:center;vertical-align:middle;margin-top:15px;">-->
+<!--                <img id="defaultImg" src="../res/images/noImg.jpg" style="cursor: pointer;border: 1px solid gray;left: 50%;top: 50%;height: 200px;"/>-->
+<!--            </div>-->
+            <div class="ui-form-two mar-top-20 objection-box">
+                <div class="ui-form-group">
+                    <div>
+                        <form class="form-group" id="formData">
+                            <table class="table align-center font14 mar-bottom-0 dataTable1" style="width:100%;height: 40px;">
+                                <tr style="width: 100%;border-top: 1px solid #f0f0f0;line-height:40px">
+                                    <td style="padding-right:10px;text-align: right;" width="40%" class="align-right">发票代码：<span style="color: #ea544a;">*</span></td>
+                                    <td width="60%" class="align-left">
+                                        <div class="selector">
+                                            <input style="width: 170px;height:28px;" id="invoiceCode" type="text" placeholder="10位或12位" class="pdright28 institution">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="width: 100%;border-top: 1px solid #f0f0f0;line-height:40px">
+                                    <td style="padding-right:10px;text-align: right;" width="40%" class="align-right" valtype="required">发票号码：<span style="color: #ea544a;">*</span></td>
+                                    <td width="60%" class="align-left">
+                                        <input style="width: 170px;height:28px;" placeholder="8位" class="amountNo" type="text" id="invoiceNumber" name="creditAmount">
+                                    </td>
+                                </tr>
+                                <tr style="width: 100%;border-top: 1px solid #f0f0f0;line-height:40px">
+                                    <td style="padding-right:10px;text-align: right;" width="40%" class="align-right">开票日期：<span style="color: #ea544a;">*</span></td>
+                                    <td width="60%" class="align-left" style="position:relative;">
+                                        <input style="width: 170px;height:28px;" type="text" id="billingDate" name="billingDate" class="sol-xs-12 calendar" readonly="readonly"  />
+                                        <i style="position: absolute;top: -1px;left:148px;color: #999;" class="iconfont g-input-icon-date"></i>
+                                    </td>
+                                </tr>
+                                <tr class="tr_checkCode" style="width: 100%;border-top: 1px solid #f0f0f0;line-height:40px">
+                                    <td style="padding-right:10px;text-align: right;" width="40%" class="align-right" valtype="required">校验码：</td>
+                                    <td width="60%" class="align-left">
+                                        <input style="width: 170px;height:28px;" placeholder="校验码后6位" type="text" id="checkCode" name="checkCode">
+                                    </td>
+                                </tr>
+                                <tr class="tr_totalAmount" style="width: 100%;border-top: 1px solid #f0f0f0;line-height:40px">
+                                    <td style="padding-right:10px;text-align: right;" width="40%" class="align-right">发票金额：</td>
+                                    <td width="60%" class="align-left">
+                                        <input style="width: 170px;height:28px;" placeholder="不含税" class="single" type="text" id="totalAmount" name="totalAmount">
+                                    </td>
+                                </tr>
+                            </table></form>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;" class="ui-form-btn  mar-bottom-20">
+                <a href="javascript:;" class="objection-btn" id="validate-button">验票</a>
+                <a href="javascript:;" class="objection-btn-close" id="validate-save">关闭</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

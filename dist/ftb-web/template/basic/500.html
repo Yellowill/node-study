@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>500</title>
+    <link rel="stylesheet" href="../res/css/skin.css" />
+</head>
+<body>
+<div class="abnormalBox">
+    <div class="abnormal-500">
+        <div class="abnormal-logo">
+            <img src="../res/images/logo.png" alt="通宝">
+        </div>
+        <ul class="abnormal-content">
+            <li>1、您可以<a href="login.html">回到通宝首页</a></li>
+            <li>2、您可以<a href="javascript:;" id="refresh">刷新浏览器</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+window.onload = function(){
+    var refresh = document.getElementById("refresh");
+    refresh.onclick = function(){
+        window.location.reload();
+    }
+}
+</script>
+</html>
